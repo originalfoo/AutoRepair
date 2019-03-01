@@ -17,6 +17,7 @@ namespace Incompatible
 
             422554572,  // 81 Tiles Updated
             412168106,  // Adjustable Demand v2
+            563229150,  // * Advanced Toolbar
             616078328,  // All Tile Start
             425057208,  // Area Enabler
             408760323,  // Auto Line Color
@@ -38,6 +39,7 @@ namespace Incompatible
             587516082,  // Early Death [Fixed for 1.4 +]
             569008960,  // Employ Overeducated Workers
             456408505,  // European Buildings Unlocker
+            451906822,  // * Enhanced build panel
             439582006,  // [ARIS] Enhanced Garbage Truck AI
             583552152,  // Enhanced Garbage Truck AI [Fixed for v1.4 +]
             813835391,  // Enhanced Garbage Truck AI [1.6]
@@ -53,7 +55,7 @@ namespace Incompatible
             802489150,  // Extended Public Transport UI (+DLCs!)
             408209297,  // Extended Road Upgrade
             631694768,  // Extended Road Upgrade
-            451700838,  // Extended Toolbar
+            451700838,  // * Extended Toolbar
             410234967,  // Fire Spread
             637901778,  // Fire Spread [Fixed for C:S 1.3.2 +]
             406255342,  // First Person Camera
