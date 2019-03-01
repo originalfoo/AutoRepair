@@ -10,6 +10,9 @@
             1591417160 // Hide It! by Keallu
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "This mod uses a consistent, fast and reliable approach to hiding/removing things."

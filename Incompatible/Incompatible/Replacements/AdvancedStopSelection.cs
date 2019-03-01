@@ -10,6 +10,9 @@
             1394468624 // Advanced Stop Selection by BloodyPenguin
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "Replaces outdated 'multitrack station enabler' mods."

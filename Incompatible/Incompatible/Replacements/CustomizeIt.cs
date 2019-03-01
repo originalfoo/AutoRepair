@@ -10,6 +10,9 @@
             1369729955 // Customize It! by TPB
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "Allows you to customise stats of most ploppable buildings."

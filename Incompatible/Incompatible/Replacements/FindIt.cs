@@ -10,6 +10,9 @@
             837734529 // Find It! by SamSamTS
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "A fast searchable and filterable build menu providing access to all assets including props."

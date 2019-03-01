@@ -36,7 +36,7 @@ namespace Incompatible
 
         public void OnDisabled()
         {
-            Debug.Log($"[{Name}] disabled.");
+            Debug.Log($"[{Name}] Disabled.");
             LoadingManager.instance.m_introLoaded -= PerformCompatibilityChecks;
         }
 

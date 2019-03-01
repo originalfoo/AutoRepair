@@ -10,6 +10,9 @@
             1627986403 // Bulldoze It! by Keallu
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "Provides automatic and manual bulldozing of abandoned, burnt, collapsed and flooded buildings directly on the bulldozer bar."

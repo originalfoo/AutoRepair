@@ -10,6 +10,9 @@
             1637663252 // TM:PE by Krzychu1245
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "This is continuation of TM:PE, with bugfixes and improvements, and replaces several obsolete mods."

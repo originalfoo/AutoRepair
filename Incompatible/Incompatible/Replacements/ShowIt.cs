@@ -10,6 +10,9 @@
             1556715327 // Show It! by Keallu
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "Reliable, accurate and fast vital indicators for zoned buildings."

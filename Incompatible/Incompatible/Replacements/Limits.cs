@@ -10,6 +10,9 @@
             1643902284 // Watch It! by Keallu
         };
 
+        // treat replacements as single combined item?
+        static readonly bool combined = false;
+
         // why do the upgrade?
         static readonly string[] why = {
             "Includes a fast and updated limits screen which includes the latest game features."

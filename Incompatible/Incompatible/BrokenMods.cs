@@ -12,7 +12,6 @@ namespace Incompatible
             // need to re-check these 3
             529979180,  // CSL Service Reserve
             413847191,  // SOM - Services Optimisation Module
-            553184329,  // Sharp Junction Angles
 
             // * = covered by at least one /replacements definition
 
@@ -38,7 +37,6 @@ namespace Incompatible
             813835487,  // Early Death [1.6]
             587516082,  // Early Death [Fixed for 1.4 +]
             569008960,  // Employ Overeducated Workers
-            1133108993, // Enhanced Building Information (1.10+)
             456408505,  // European Buildings Unlocker
             439582006,  // [ARIS] Enhanced Garbage Truck AI
             583552152,  // Enhanced Garbage Truck AI [Fixed for v1.4 +]
@@ -105,8 +103,8 @@ namespace Incompatible
             813834836,  // * Remove Stuck Vehicles [1.6]
             820547325,  // Resilient Owners (Make Historical)
             1628112268, // * RightTurnNoStop
-            418556522,  // Road Anarchy
-            954034590,  // Road Anarchy V2
+            418556522,  // * Road Anarchy
+            954034590,  // * Road Anarchy V2
             417926819,  // Road Assistant
             651610627,  // Road Color Changer Continued
             436253779,  // Road Protractor
@@ -115,6 +113,7 @@ namespace Incompatible
             605590542,  // Rush Hour[Beta]
             540758804,  // * Search Box Mod
             785237088,  // * Service Radius Adjuster
+            553184329,  // * Sharp Junction Angles
             494094728,  // * Show limits
             421028969,  // [ARIS] Skylines Overwatch
             583538182,  // Skylines Overwatch [Fixed for v1.3 +]
