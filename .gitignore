@@ -1,3 +1,7 @@
+# Cruft
+.vs/
+obj/
+
 # Prerequisites
 *.d
 
