@@ -88,6 +88,7 @@ namespace Incompatible
             408190203,  // * No more purple pollution (muddy water)
             408189919,  // * No more purple pollution (silty water)
             408167727,  // * No more purple pollution (radioactive green water)
+            409073164,  // * No pillars
             771161159,  // OSM Import
             410842044,  // Persistent Resource View
             685747254,  // Prop Fine Tune
@@ -132,6 +133,7 @@ namespace Incompatible
             1348361731, // * Traffic Manager: President Edition ALPHA/DEBUG
             498363759,  // * Traffic Manager + Improved AI
             563720449,  // * Traffic Manager + Improved AI (Japanese Ver.)
+            423964385,  // * TreeBrush
             445799544,  // * V10Bulldoze
             414702884,  // Zoneable Pedestrian Paths
         };

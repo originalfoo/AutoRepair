@@ -56,6 +56,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Replacements\BulldozeIt.cs" />
     <Compile Include="Replacements\FineRoad.cs" />
+    <Compile Include="Replacements\Landscaping.cs" />
+    <Compile Include="Replacements\NetworkSkins.cs" />
     <Compile Include="Replacements\ResizeIt.cs" />
     <Compile Include="Replacements\ShowIt.cs" />
     <Compile Include="Replacements\Limits.cs" />

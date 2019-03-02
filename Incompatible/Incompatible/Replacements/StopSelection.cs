@@ -1,6 +1,6 @@
 ﻿namespace Incompatible.Replacements
 {
-    public static class AdvancedStopSelection
+    public static class StopSelection
     {
         // recommend even if no broken mods? (must still have at least one deprecated mod subbed)
         static readonly bool always = false;
