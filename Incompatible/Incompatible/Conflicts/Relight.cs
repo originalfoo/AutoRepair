@@ -1,8 +1,8 @@
 ﻿namespace Incompatible.Conflicts
 {
     // If Relight mod is active:
-    // * Disable 'Softer Shadows'
-    // * Change settings in 'Daylight Classic' (if it's instlled)
+    // * Disable 'Softer Shadows' mod
+    // * Change settings in 'Daylight Classic' mod (if it's installed)
 
     public static class Relight
     {
