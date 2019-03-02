@@ -4,7 +4,7 @@ namespace Incompatible
 {
     public class BrokenMods
     {
-        // a list of gaame breaking or obsolete mods
+        // a list of game breaking or obsolete mods
         private readonly ulong[] list =
         {
 
@@ -58,7 +58,7 @@ namespace Incompatible
             631694768,  // Extended Road Upgrade
             451700838,  // * Extended Toolbar
             410234967,  // Fire Spread
-            637901778,  // Fire Spread [Fixed for C:S 1.3.2 +]
+            637901778,  // Fire Spread [Fixed for C:S 1.3.2+]
             406255342,  // First Person Camera
             439360165,  // * Hide district policy icons
             413748580,  // Image Overlay
