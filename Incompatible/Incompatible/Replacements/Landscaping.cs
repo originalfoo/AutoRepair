@@ -20,7 +20,7 @@
 
         // workshop ids of mods deprecated by the upgrade
         static readonly ulong[] deprecates = {
-            411095553, // Terraform tool 0.9
+            411095553, // * Terraform tool 0.9
             406723376, // Tree Brush
             423964385, // * TreeBrush
         };

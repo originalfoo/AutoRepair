@@ -57,6 +57,8 @@
     <Compile Include="Replacements\BulldozeIt.cs" />
     <Compile Include="Replacements\FineRoad.cs" />
     <Compile Include="Replacements\Landscaping.cs" />
+    <Compile Include="Replacements\AVO.cs" />
+    <Compile Include="Replacements\PurchaseIt.cs" />
     <Compile Include="Replacements\NetworkSkins.cs" />
     <Compile Include="Replacements\ResizeIt.cs" />
     <Compile Include="Replacements\ShowIt.cs" />
@@ -65,7 +67,8 @@
     <Compile Include="Replacements\FindIt.cs" />
     <Compile Include="Replacements\CustomizeIt.cs" />
     <Compile Include="Replacements\HideIt.cs" />
-    <Compile Include="Replacements\AdvancedStopSelection.cs" />
+    <Compile Include="Replacements\RoadOptions.cs" />
+    <Compile Include="Replacements\StopSelection.cs" />
     <Compile Include="Replacements\TrafficManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

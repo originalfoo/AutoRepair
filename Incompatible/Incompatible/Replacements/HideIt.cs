@@ -47,6 +47,9 @@
             408190203,  // * No more purple pollution (muddy water)
             408189919,  // * No more purple pollution (silty water)
             408167727,  // * No more purple pollution (radioactive green water)
+            491002883,  // Pale Green Pollution (Tropical Boreal)
+            490998828,  // Pale Green Pollition (Temperate)
+            491003892,  // Pale Green Pollution (European)
             666425898,  // No radioactive desert and more!
             547533304,  // Remove decoration sprites (grass and rocks)
             548149310,  // Remove dirt (trees and props)
@@ -61,6 +64,7 @@
 
             // ui removal mods
 
+            417926819,  // * Road Assistant (note: Hide It obviously doesn't do the grid thing that this mod does,  but does everything else)
             553319260,  // Hide border line and asset editor grid
             417565011,  // NOtifications (building notification bubble remover)
             561293123,  // Hide Problems aka Politicians' Mod

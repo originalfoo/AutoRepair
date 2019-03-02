@@ -28,6 +28,7 @@
             433567230,  // Advanced Road Anarchy
             1436255148, // Fine Road Anarchy (Chinese)
             553184329,  // * Sharp Junction Angles
+            448434637,  // * Enhanced Road Heights
         };
     }
 }

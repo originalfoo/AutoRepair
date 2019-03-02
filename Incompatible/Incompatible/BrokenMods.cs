@@ -18,8 +18,8 @@ namespace Incompatible
             422554572,  // 81 Tiles Updated
             412168106,  // Adjustable Demand v2
             563229150,  // * Advanced Toolbar
-            616078328,  // All Tile Start
-            425057208,  // Area Enabler
+            616078328,  // * All Tile Start
+            425057208,  // * Area Enabler
             408760323,  // Auto Line Color
             406132323,  // * Automatic Bulldoze
             1393966192, // * Automatic Bulldoze Simple Edition
@@ -46,6 +46,7 @@ namespace Incompatible
             433249875,  // [ARIS] Enhanced Hearse AI
             583556014,  // Enhanced Hearse AI [Fixed for v1.4 +]
             813835241,  // Enhanced Hearse AI [1.6]
+            448434637,  // * Enhanced Road Heights
             1133108993, // * Extended Building Information (1.10+)
             767809751,  // * Extended Building Information (Chinese)
             414469593,  // * Extended Building Information
@@ -77,6 +78,7 @@ namespace Incompatible
             478820060,  // Network Extensions Project(v1)
             658653260,  // * Network Nodes Editor [Experimental]
             929114228,  // New Roads for Network Extensions
+            1147015481, // * No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
             407270433,  // * No more purple pollution (normal grass)
             407795371,  // * No more purple pollution (brown grass)
             407810495,  // * No more purple pollution (tan grass)
@@ -108,8 +110,9 @@ namespace Incompatible
             1628112268, // * RightTurnNoStop
             418556522,  // * Road Anarchy
             954034590,  // * Road Anarchy V2
-            417926819,  // Road Assistant
-            651610627,  // Road Color Changer Continued
+            417926819,  // * Road Assistant
+            417585852,  // * Road Color Changer (original)
+            651610627,  // * Road Color Changer Continued
             436253779,  // Road Protractor
             726005715,  // Roads United Core+
             680748394,  // Roads United: North America
@@ -123,7 +126,7 @@ namespace Incompatible
             813833476,  // Skylines Overwatch [1.6]
             1393831156, // Sub Mesh Flags
             556416380,  // Telemetry Control
-            411095553,  // Terraform Tool 0.9
+            411095553,  // * Terraform Tool 0.9
             510802741,  // Toggle District Snapping
             415782697,  // Toggle Zoning
             409184143,  // * Traffic++
@@ -134,6 +137,11 @@ namespace Incompatible
             498363759,  // * Traffic Manager + Improved AI
             563720449,  // * Traffic Manager + Improved AI (Japanese Ver.)
             423964385,  // * TreeBrush
+            477615230,  // * UnlockAreaCountLimit
+            709765899,  // * UnlockAreaCountLimit
+            477574890,  // * UnlockAreaCountLimit
+            477574991,  // * UnlockAreaCountLimitAndFree
+            477615068,  // * UnlockAreaCountLimitAndFree
             445799544,  // * V10Bulldoze
             414702884,  // Zoneable Pedestrian Paths
         };
