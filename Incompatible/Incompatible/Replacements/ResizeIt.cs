@@ -1,5 +1,21 @@
 ﻿namespace Incompatible.Replacements
 {
+     /*
+     * Why 'Resize It!' instead of 'More Advanced Toolbar'?
+     * 
+     * From end-user perspective, Resize It is easier to work with and has fewer
+     * incompatibilities with other mods (particularly Find It and Plop The Growables).
+     * 
+     * The replacement definition below will only prompt users to upgrade to Resize It
+     * if they are using an old broken toolbar mod (denoted by '*' in deprecation list).
+     * 
+     * However, if users enable 'Show all upgrade recommendations' they will be asked
+     * to upgrade from 'More Advanced Toolbar' to 'Resize It!'.
+     * 
+     * If 'More Advanced Toolbar' is updated to be more compatible with other mods,
+     * we will revise this repllacement script to offer a choice between the two mods.
+    */
+
     public static class ResizeIt
     {
         // recommend even if no broken mods? (must still have at least one deprecated mod subbed)

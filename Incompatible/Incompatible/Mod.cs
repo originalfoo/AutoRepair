@@ -46,11 +46,13 @@ namespace Incompatible
 
             // disable mods broken due to game patch
 
-            // suggest replacements for broken/obsolete mods
+            // Replacements
 
-            // check for any missing mod depdencies
+            // Dependencies
 
-            // deal with any remaining broken/obsolete mods
+            // Broken
+
+            // Conflicts
         }
     }
 }

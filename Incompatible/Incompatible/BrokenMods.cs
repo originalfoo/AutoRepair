@@ -113,7 +113,7 @@ namespace Incompatible
             417926819,  // * Road Assistant
             417585852,  // * Road Color Changer (original)
             651610627,  // * Road Color Changer Continued
-            436253779,  // Road Protractor
+            436253779,  // * Road Protractor
             726005715,  // Roads United Core+
             680748394,  // Roads United: North America
             605590542,  // Rush Hour[Beta]
