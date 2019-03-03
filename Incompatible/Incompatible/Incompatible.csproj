@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrokenMods.cs" />
+    <Compile Include="Broken\Broken.cs" />
     <Compile Include="Conflicts\Relight.cs" />
     <Compile Include="Dependencies\Dependencies.cs" />
     <Compile Include="Mod.cs" />
