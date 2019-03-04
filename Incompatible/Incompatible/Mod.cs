@@ -1,33 +1,29 @@
 ﻿using ICities;
 using System.Reflection;
-using ColossalFramework;
 using ColossalFramework.UI;
 using UnityEngine;
 using System.Collections.Generic;
 using ColossalFramework.Plugins;
-using Incompatible.Broken;
 
 namespace Incompatible
 {
     public class Mod : IUserMod
     {
+        // Mod version
         public static readonly string Version = "0.1";
-
-        public static readonly uint GameVersion = 180609552u;
-        public static readonly uint GameVersionA = 1u;
-        public static readonly uint GameVersionB = 11u;
-        public static readonly uint GameVersionC = 1u;
-        public static readonly uint GameVersionBuild = 2u;
-
         public static readonly string name = "Mod Freshener " + Version;
 
+        // Required by C:SL
         public string Name => name;
-
         public string Description => "Detects incompatible and broken mods and warns you about them";
+
+        // expected game version
+        public static readonly uint GameVersionA = 1u;
+        public static readonly uint GameVersionB = 11u;
 
         public void OnEnabled()
         {
-            Debug.Log($"[{name}] Build {Assembly.GetExecutingAssembly().GetName().Version} for game version {GameVersionA}.{GameVersionB}.{GameVersionC}-f{GameVersionBuild}");
+            Debug.Log($"[{name}] Build {Assembly.GetExecutingAssembly().GetName().Version} for Cities:Skylines {GameVersionA}.{GameVersionB}");
             if (UIView.GetAView() != null)
             {
                 PerformCompatibilityChecks();
@@ -44,13 +40,16 @@ namespace Incompatible
             LoadingManager.instance.m_introLoaded -= PerformCompatibilityChecks;
         }
 
-        private static void PerformCompatibilityChecks() // todo
+        public static void PerformCompatibilityChecks()
         {
             Debug.Log($"[{name}] Initiating compatibility checks...");
 
-            // if game version changed unexpectedly, show warning
+            if (UnexpectedGameVersion())
+            {
+                // if game version changed unexpectedly, show warning
 
-            // disable mods broken due to game patch
+                // disable mods broken due to game patch
+            }
 
             // List of installed broken/obsolete mods
 
@@ -63,6 +62,12 @@ namespace Incompatible
             // Broken
 
             // Conflicts
+        }
+
+        public static bool UnexpectedGameVersion()
+        {
+            Debug.Log($"[{name}] Detected game version: {BuildConfig.applicationVersionFull}");
+            return (GameVersionB != BuildConfig.APPLICATION_VERSION_B && GameVersionA != BuildConfig.APPLICATION_VERSION_A);
         }
     }
 }
