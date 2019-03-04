@@ -57,6 +57,7 @@
     <Compile Include="Dependencies\Dependencies.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Replacements\IReplacement.cs" />
     <Compile Include="Replacements\PrecisionEngineering.cs" />
     <Compile Include="Replacements\BulldozeIt.cs" />
     <Compile Include="Replacements\FineRoad.cs" />

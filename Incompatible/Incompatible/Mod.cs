@@ -42,10 +42,14 @@ namespace Incompatible
 
         public static void PerformCompatibilityChecks()
         {
+            // todo - optionally output list of all subbed & local mods
+
             Debug.Log($"[{name}] Initiating compatibility checks...");
 
             if (UnexpectedGameVersion())
             {
+                Debug.Log($"[{name}] GAME UPDATE DETECTED - MAY CAUSE ISSUES WITH MODS");
+
                 // if game version changed unexpectedly, show warning
 
                 // disable mods broken due to game patch

@@ -7,7 +7,8 @@
 
         // workshop id(s) of mod(s) to upgrade to
         static readonly ulong[] replacements = {
-            1637663252 // TM:PE by Krzychu1245
+            583429740,  // TM:PE Stable
+            1637663252, // TM:PE Labs
         };
 
         // treat replacements as single combined item?
@@ -23,7 +24,6 @@
             492391912,  // * Improvedd AI (Traffic++)
             409184143,  // * Traffic++
             626024868,  // * Traffic++ V2
-            583429740,  // * Traffic Manager: President Edition (LinuxFan)
             1581695572, // * Traffic Manager: President Edition (temp bugfix)
             1348361731, // * Traffic Manager: President Edition ALPHA/DEBUG
             498363759,  // * Traffic Manager + Improved AI
