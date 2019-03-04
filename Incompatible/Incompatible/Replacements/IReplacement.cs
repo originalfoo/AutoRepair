@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static ColossalFramework.Plugins.PluginManager;
 
 namespace Incompatible.Replacements
 {
@@ -27,5 +28,20 @@ namespace Incompatible.Replacements
         // * broken mods will be unsubscribed
         // * non-broken mods can be merely disabled
         ulong[] Deprecates { get; }
+
+        // Called before unsubbing a deprecated plugin
+        // ulong workshopId = plugin.publishedFileID.AsUInt64;
+        // bool isEnabled = plugin.isEnabled
+        // Note: The plugin will be automatically disabled after this method call
+        void OnBeforeRemove(PluginInfo plugin);
+
+        // Called after unsubbing a deprecated plugin
+        // ulong workshopId = plugin.publishedFileID.AsUInt64;
+        void OnAfterRemove(PluginInfo plugin);
+
+        // Called after subscribing a replacement plugin
+        // ulong workshopId = plugin.publishedFileID.AsUInt64;
+        // plugin.isEnabled = true
+        void OnAfterSubscribe(PluginInfo plugin);
     }
 }
