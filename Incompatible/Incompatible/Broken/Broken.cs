@@ -13,14 +13,10 @@ namespace Incompatible
         {
             // '*' at start of string means "replacement available"
             
-            // need to re-check these
-            { 529979180, "CSL Service Reserve" },
-            { 413847191, "SOM - Services Optimisation Module" },
-            // also, one of the compass mods might be working
-
             { 422554572,  "81 Tiles Updated" },
             { 412168106,  "Adjustable Demand v2" },
             { 563229150,  "* Advanced Toolbar" },
+            { 1138679561, "* All Spaces Unlock" },
             { 616078328,  "* All Tile Start" },
             { 425057208,  "* Area Enabler" },
             { 408760323,  "Auto Line Color" },
@@ -35,6 +31,7 @@ namespace Incompatible
             { 420469721,  "Compass Mod" },
             { 414326578,  "* Configurable Transport Capacity" },
             { 410535198,  "Control Building Level Up" },
+            { 443489442,  "* Custom Milestone Unlocker" },
             { 1398502258, "Dam Upkeep Scaler" },
             { 821539759,  "Disable Zone Check" },
             { 649522495,  "District Service Limit" },
@@ -42,6 +39,7 @@ namespace Incompatible
             { 421188880,  "[ARIS] Early Death" },
             { 813835487,  "Early Death [1.6]" },
             { 587516082,  "Early Death [Fixed for 1.4 +]" },
+            { 410614868,  "* EarlyUnlock" },
             { 569008960,  "Employ Overeducated Workers" },
             { 456408505,  "European Buildings Unlocker" },
             { 451906822,  "* Enhanced build panel" },
@@ -71,7 +69,8 @@ namespace Incompatible
             { 508195208,  "Improved Asset Icons" },
             { 417430545,  "Improved Assets Panel" },
             { 416033610,  "Improved Mods Panel" },
-            { 580335918,  "Infinite Oil and Ore" },
+            { 852103955,  "* InfiniteOilAndOre" },
+            { 580335918,  "* Infinite Oil and Ore Redux" },
             { 472128528,  "Larger Footprints" },
             { 503147777,  "* MoleDozer" },
             { 1434173135, "* Move It (Chinese version)" },
@@ -124,6 +123,7 @@ namespace Incompatible
             { 680748394,  "Roads United: North America" },
             { 605590542,  "Rush Hour[Beta]" },
             { 540758804,  "* Search Box Mod" },
+            { 413847191,  "SOM - Services Optimisation Module" },
             { 785237088,  "* Service Radius Adjuster" },
             { 553184329,  "* Sharp Junction Angles" },
             { 494094728,  "* Show limits" },
@@ -161,6 +161,13 @@ namespace Incompatible
             { 419333753,  "* Unlimited Money" },
             { 418153488,  "* Unlimited Money" },
             { 417187838,  "* Unlimited Money" },
+            { 438378843,  "* UnlockAll" },
+            { 431993428,  "* UnlockAll" },
+            { 428555989,  "* UnlockAll" },
+            { 428555664,  "* UnlockAll" },
+            { 419329713,  "* UnlockAll" },
+            { 418975267,  "* UnlockAll" },
+            { 421320224,  "Unlock Districts" },
         };
 
         // returns a list of which broken mods are currently installed
