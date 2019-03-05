@@ -76,6 +76,10 @@
     <Compile Include="Replacements\RoadOptions.cs" />
     <Compile Include="Replacements\StopSelection.cs" />
     <Compile Include="Replacements\TrafficManager.cs" />
+    <Compile Include="Replacements\UnlimitedSoil.cs" />
+    <Compile Include="Replacements\UnlockAll.cs" />
+    <Compile Include="Replacements\UnlimitedResources.cs" />
+    <Compile Include="Replacements\UnlimitedMoney.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

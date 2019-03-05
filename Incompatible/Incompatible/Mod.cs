@@ -42,7 +42,7 @@ namespace Incompatible
 
         public static void PerformCompatibilityChecks()
         {
-            // todo - optionally output list of all subbed & local mods
+            Helper.DumpModListToLog();
 
             Debug.Log($"[{name}] Initiating compatibility checks...");
 
