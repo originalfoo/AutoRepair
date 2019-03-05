@@ -96,6 +96,7 @@ namespace Incompatible
             { 408189919,  "* No more purple pollution (silty water)" },
             { 408167727,  "* No more purple pollution (radioactive green water)" },
             { 409073164,  "* No pillars" },
+            { 654586812,  "* No Soil Limit" },
             { 771161159,  "OSM Import" },
             { 410842044,  "Persistent Resource View" },
             { 685747254,  "Prop Fine Tune" },
@@ -148,6 +149,18 @@ namespace Incompatible
             { 477615068,  "* UnlockAreaCountLimitAndFree" },
             { 445799544,  "* V10Bulldoze" },
             { 414702884,  "Zoneable Pedestrian Paths" },
+            { 438378612,  "* Unlimited Money" },
+            { 428608882,  "* Unlimited Money" },
+            { 427997113,  "* Unlimited Money" },
+            { 427901620,  "* Unlimited Money" },
+            { 424026003,  "* Unlimited Money" },
+            { 422901712,  "* Unlimited Money" },
+            { 420911882,  "* Unlimited Money" },
+            { 420550550,  "* Unlimited Money" },
+            { 419484397,  "* Unlimited Money" },
+            { 419333753,  "* Unlimited Money" },
+            { 418153488,  "* Unlimited Money" },
+            { 417187838,  "* Unlimited Money" },
         };
 
         // returns a list of which broken mods are currently installed
