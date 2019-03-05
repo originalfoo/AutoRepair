@@ -19,10 +19,10 @@ namespace Incompatible.Replacements
 
         internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
-            { 418556522, 1|2 }, // * Road Anarchy
-            { 954034590, 1|2 }, // * Road Anarchy V2
+            { 418556522, 3 }, // * Road Anarchy
+            { 954034590, 3 }, // * Road Anarchy V2
             { 1362508329, 1 },  // Fine Road Anarchy 2018
-            { 433567230, 1|2 }, // Advanced Road Anarchy
+            { 433567230, 3 }, // Advanced Road Anarchy
             { 1436255148, 1 },  // Fine Road Anarchy (Chinese)
             { 553184329, 1 },   // * Sharp Junction Angles
             { 448434637, 2 },   // * Enhanced Road Heights

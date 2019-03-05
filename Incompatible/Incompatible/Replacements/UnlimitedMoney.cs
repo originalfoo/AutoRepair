@@ -7,7 +7,7 @@ namespace Incompatible.Replacements
     {
         internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
-            { Helper.CitiesSkylinesFeature, 1 } // CSL Inbuilt Mod
+            { Helper.CitiesSkylinesFeature, 1 } // CSL 'Unlimited Money' Mod
         };
 
         internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()

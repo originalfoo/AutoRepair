@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Broken\Broken.cs" />
+    <Compile Include="Conflicts\ExtendedGameOptions.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Conflicts\Relight.cs" />
     <Compile Include="Dependencies\Dependencies.cs" />
