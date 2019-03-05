@@ -1,27 +1,31 @@
-﻿namespace Incompatible.Replacements
+﻿using System.Collections.Generic;
+using ColossalFramework.Plugins;
+
+namespace Incompatible.Replacements
 {
-    public static class Limits
+    class Limits : ReplacementBase, IReplacement
     {
-        // recommend even if no broken mods? (must still have at least one deprecated mod subbed)
-        static readonly bool always = false;
-
-        // workshop id(s) of mod(s) to upgrade to
-        static readonly ulong[] replacements = {
-            1643902284 // Watch It! by Keallu
+        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        {
+            { 1643902284, 1 } // Watch It!
         };
 
-        // treat replacements as single combined item?
-        static readonly bool combined = false;
-
-        // why do the upgrade?
-        static readonly string[] why = {
-            "Includes a fast and updated limits screen which includes the latest game features."
+        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        {
+            { 1, "Includes a fast and updated limits screen which lists lots of limits." }
         };
 
-        // workshop ids of mods deprecated by the upgrade
-        static readonly ulong[] deprecates = {
-            494094728, // Show limits
-            531738447, // Show more limits
+        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        {
+            { 494094728, 1 }, // Show limits
+            { 531738447, 1 }, // Show more limits
         };
+
+        public override void OnAfterSubscribe(PluginManager.PluginInfo plugin)
+        {
+            base.OnAfterSubscribe(plugin);
+
+            // todo: enable limits display
+        }
     }
 }

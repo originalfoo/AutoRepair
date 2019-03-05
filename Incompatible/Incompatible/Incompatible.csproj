@@ -65,6 +65,7 @@
     <Compile Include="Replacements\AVO.cs" />
     <Compile Include="Replacements\PurchaseIt.cs" />
     <Compile Include="Replacements\NetworkSkins.cs" />
+    <Compile Include="Replacements\ReplacementBase.cs" />
     <Compile Include="Replacements\ResizeIt.cs" />
     <Compile Include="Replacements\ShowIt.cs" />
     <Compile Include="Replacements\Limits.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Replacements\RoadOptions.cs" />
     <Compile Include="Replacements\StopSelection.cs" />
     <Compile Include="Replacements\TrafficManager.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,26 +1,24 @@
-﻿namespace Incompatible.Replacements
+﻿using System.Collections.Generic;
+
+namespace Incompatible.Replacements
 {
-    public static class AVO
+    class AVO : ReplacementBase, IReplacement
     {
-        // recommend even if no broken mods? (must still have at least one deprecated mod subbed)
-        static readonly bool always = true;
+        public override bool Always => true;
 
-        // workshop id(s) of mod(s) to upgrade to
-        static readonly ulong[] replacements = {
-            1548831935 // Advanced Vehicle Options - Industries Ready by Tim
+        internal new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>() {
+            { 1548831935, 1 } // Advanced Vehicle Options by Tim
         };
 
-        // treat replacements as single combined item?
-        static readonly bool combined = false;
-
-        // why do the upgrade?
-        static readonly string[] why = {
-            "Updated version of AVO that puts vehicles in right categories, compatible with latest game version and DLCs."
+        internal new Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        {
+            { 1, "AVO allows you to customise vehicle stats (capacity, size, etc.) and colours, and also control which vehicles can spawn. Compatible with latest game version and all DLCs." }
         };
 
-        // workshop ids of mods deprecated by the upgrade
-        static readonly ulong[] deprecates = {
-            442167376, // Advanced Vehicle Options
+        internal new Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>() {
+            { 442167376, 1 },  // Advanced Vehicle Options by SamSamTS
+            { 1228424498, 1 }, // * Bzimage VehicleCapacity
+            { 414326578, 1 },  // * Configurable Transport Capacity
         };
     }
 }

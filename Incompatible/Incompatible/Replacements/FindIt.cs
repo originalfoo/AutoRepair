@@ -1,4 +1,4 @@
-﻿using static ColossalFramework.Plugins.PluginManager;
+﻿using System.Collections.Generic;
 
 namespace Incompatible.Replacements
 {
@@ -15,36 +15,24 @@ namespace Incompatible.Replacements
     * For these reasons, 'Find It' is considered more suitable for end-users.
    */
 
-    public class FindIt : IReplacement
+    class FindIt : ReplacementBase, IReplacement
     {
-        public bool Always => true;
+        public override bool Always => true;
 
-        public ulong[] Replacements = { 837734529u }; // Find It! by SamSamTS
-
-        public bool Combined => false;
-
-        public string Notes => "A fast searchable and filterable build menu providing access to all assets including props.";
-
-        public readonly ulong[] Deprecates =
+        internal new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
-            540758804, // * Search Box Mod
-            505480567, // More beautification (causes lag)
+            { 837734529u, 1 } // Find It! by SamSamTS
         };
 
-        public void OnBeforeRemove(PluginInfo plugin)
+        internal new Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
-            // do nothing
-        }
+            { 1, "A fast searchable and filterable build menu providing access to all assets including props." }
+        };
 
-        public void OnAfterRemove(PluginInfo plugin)
+        internal new Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
-            // do nothing
-        }
-
-        public void OnAfterSubscribe(PluginInfo plugin)
-        {
-            plugin.isEnabled = true;
-        }
-
+            { 540758804, 1 }, // * Search Box Mod
+            { 505480567, 1 }, // More beautification (causes lag)
+        };
     }
 }

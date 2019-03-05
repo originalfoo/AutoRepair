@@ -1,26 +1,22 @@
-﻿namespace Incompatible.Replacements
+﻿using System.Collections.Generic;
+
+namespace Incompatible.Replacements
 {
-    public static class PrecisionEngineering
+    class PrecisionEngineering : ReplacementBase, IReplacement
     {
-        // recommend even if no broken mods? (must still have at least one deprecated mod subbed)
-        static readonly bool always = false;
-
-        // workshop id(s) of mod(s) to upgrade to
-        static readonly ulong[] replacements = {
-            1548831935 // Precision Engineering by Simie
+        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        {
+            { 1548831935, 1 } // Precision Engineering by Simie
         };
 
-        // treat replacements as single combined item?
-        static readonly bool combined = false;
-
-        // why do the upgrade?
-        static readonly string[] why = {
-            "Precision Engineering replaces the obsolete Road Protactor mod."
+        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        {
+            { 1, "Precision Engineering replaces the obsolete Road Protactor mod." }
         };
 
-        // workshop ids of mods deprecated by the upgrade
-        static readonly ulong[] deprecates = {
-            436253779, // * Road protractor
+        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        {
+            { 436253779, 1 } // * Road protractor
         };
     }
 }

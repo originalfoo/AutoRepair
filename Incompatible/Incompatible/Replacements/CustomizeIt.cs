@@ -1,26 +1,22 @@
-﻿namespace Incompatible.Replacements
+﻿using System.Collections.Generic;
+
+namespace Incompatible.Replacements
 {
-    public static class CustomizeIt
+    class CustomizeIt : ReplacementBase, IReplacement
     {
-        // recommend even if no broken mods? (must still have at least one deprecated mod subbed)
-        static readonly bool always = false;
-
-        // workshop id(s) of mod(s) to upgrade to
-        static readonly ulong[] replacements = {
-            1369729955 // Customize It! by TPB
+        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        {
+            { 1369729955, 1 } // Customize It! by TPB
         };
 
-        // treat replacements as single combined item?
-        static readonly bool combined = false;
-
-        // why do the upgrade?
-        static readonly string[] why = {
-            "Allows you to customise stats of most ploppable buildings."
+        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        {
+            { 1, "Allows you to customise stats of most ploppable buildings." }
         };
 
-        // workshop ids of mods deprecated by the upgrade
-        static readonly ulong[] deprecates = {
-            785237088, // * Service Radius Adjuster
+        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        {
+            { 785237088, 1 } // * Service Radius Adjuster
         };
     }
 }
