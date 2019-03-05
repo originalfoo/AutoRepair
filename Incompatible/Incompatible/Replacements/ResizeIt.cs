@@ -18,7 +18,7 @@ namespace Incompatible.Replacements
      * we will revise this repllacement script to offer a choice between the two mods.
     */
 
-    class ResizeIt
+    class ResizeIt : ReplacementBase, IReplacement
     {
         internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
