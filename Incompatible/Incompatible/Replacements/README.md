@@ -2,11 +2,11 @@
 
 Rather than just unsubbing broken mods, we try to replace them with better equivalents so the user doesn't lose functionality they had become accustomed to.
 
-By default, users will only be prompted to "upgrade" to a replacement mod if a mod they are currently using is known to be broken. This ensures we don't unnecessarily cull "working" (from user perspective) mods. The user can override the default behaviour in the mod options.
+By default, users will only be prompted to "upgrade" to a replacement mod if a mod they are currently using is known to be broken or obsolete. This ensures we don't unnecessarily cull "working" mods. The user can override the default behaviour in the mod options.
 
 ## Choosing replacements
 
-For a given broken mod, there are sometimes multiple equivalents to choose from. In such cases, we have to determine which mod(s) are going to be best for the end-user based on a number of criteria, such as:
+For a given broken mod, there are sometimes multiple replacements to choose from. In such cases, we have to determine which mod(s) are suitable for the majority of end-users, based on a number of criteria such as:
 
 * Is it reliable?
 * Is it easy to use?
@@ -17,7 +17,7 @@ For a given broken mod, there are sometimes multiple equivalents to choose from.
 
 ## Scripts
 
-Each replacement suggestion is defined by a "script", which is essentially a C# file containing several fields describing which mods are deprecated for the specified replacements.
+Each replacement suggestion is defined by a "script", which is just a C# file containing fields defining the deprecated mods and their replacements, and methods which can perform some extra processing if needs be.
 
 To ensure the scripts remain largely consistent, and provide the required information, an interface `IReplacement` and an extension base `ReplacementBase` have been provided.
 
@@ -55,11 +55,11 @@ Note: See `IReplacement.cs` for some additional notes.
 
 **Groups:**
 
-The `byte` elements of dictionary properties can be used as a simplistic grouping mechanism. For example, if you have two individual replacement mods you an number them `1` and `2`. If you had a third, it could be numbered `4` (think bitwise flags).
+The `byte` elements of dictionary properties can be used as a simplistic grouping mechanism. For example, if you have two individual replacement mods you an number them `1` and `2`. If you had a third, it could be numbered `4` (yes, bitwise flags).
 
 This allows you to group replacements (eg. you could put two replacements in group `1` and a third in group `2`). The `Mode` property takes account of this - if the user selectes a mod in group `1`, both mods in that group would be selected.
 
-The user interface will reflect user selections accordingly, showing applicable `Notes` and replacing associated `Deprecates` mods.
+The user interface will reflect user selections accordingly, showing applicable `Notes` and replacing associated `Deprecates` mods. Something relates to group `1` and `2`? Use `1|2` = `3`.
 
 **CitiesSkylinesFeature**
 
