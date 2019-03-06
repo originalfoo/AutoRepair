@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Incompatible.Replacements.Scripts
+﻿namespace Incompatible.Replacements.Scripts
 {
     /*
     * Why recommend upgrading 'More Beautification' to 'Find It'?
@@ -15,24 +13,19 @@ namespace Incompatible.Replacements.Scripts
     * For these reasons, 'Find It' is considered more suitable for end-users.
    */
 
-    class FindIt : ReplacementBase, IReplacement
+    class FindIt : ReplacementBase
     {
-        public override bool Always => true;
-
-        protected new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public FindIt()
         {
-            { 837734529u, 1 } // Find It! by SamSamTS
-        };
+            mandatory = true;
 
-        protected new Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "A fast searchable and filterable build menu providing access to all assets including props." }
-        };
+            option.Add(837734529u, 1); // Find It! by SamSamTS
 
-        protected new Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 540758804, 1 }, // * Search Box Mod
-            { 505480567, 1 }, // More beautification (causes lag)
-        };
+            note.Add(1, "'Find It!' adds a searchable and filterable build menu providing access to all assets including props.");
+
+            deprecated.Add(505480567, 1); // More beautification (causes lag)
+
+            obsolete.Add(540758804, 1); // * Search Box Mod
+        }
     }
 }

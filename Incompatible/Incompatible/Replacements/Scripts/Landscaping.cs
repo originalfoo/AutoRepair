@@ -1,26 +1,25 @@
-﻿using System.Collections.Generic;
-using ColossalFramework.Plugins;
+﻿using ColossalFramework.Plugins;
 
 namespace Incompatible.Replacements.Scripts
 {
-    class Landscaping : ReplacementBase, IReplacement
+    class Landscaping : ReplacementBase
     {
-        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public Landscaping()
         {
-            { 502750307, 1 } // Extra Landscaping Tools by BloodyPenguin
-        };
+            choice = Select.Any;
 
-        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Adds terraforming, natural resource, water and tree painter to the game." }
-        };
+            option.Add(502750307, 1); // Extra Landscaping Tools by BloodyPenguin
+            option.Add(1658679290, 2); // Forest Brush by TPB
 
-        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 411095553, 1 }, // * Terraform tool 0.9
-            { 406723376, 1 }, // Tree Brush
-            { 423964385, 1 }, // * TreeBrush
-        };
+            note.Add(1, "'Extra Landscapin Tools' adds terraforming, natural resource, water and tree painter to the game.");
+            note.Add(2, "'Forest Brush' allows you to quickly crete forest styles (plant collections) and then paint them on the map.");
+
+            deprecated.Add(406723376, 3); // Tree Brush
+            deprecated.Add(1654658173, 2); // Random Tree Brush
+
+            obsolete.Add(411095553, 1); // * Terraform tool 0.9
+            obsolete.Add(423964385, 3); // * TreeBrush
+        }
 
         private bool trees = false;
         private bool terraform = false;
@@ -33,6 +32,7 @@ namespace Incompatible.Replacements.Scripts
             {
                 case 406723376:
                 case 423964385:
+                case 1654658173:
                     trees = trees || plugin.isEnabled;
                     break;
                 case 411095553:

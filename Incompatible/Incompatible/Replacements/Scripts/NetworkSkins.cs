@@ -1,25 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace Incompatible.Replacements.Scripts
+﻿namespace Incompatible.Replacements.Scripts
 {
-    class NetworkSkins : ReplacementBase, IReplacement
+    class NetworkSkins : ReplacementBase
     {
-        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public NetworkSkins()
         {
-            { 543722850, 1 } // Network Skins by BloodyPenguin and Boformer
-        };
+            option.Add(543722850, 1); // Network Skins by BloodyPenguin and Boformer
 
-        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Allows you to remove or change pillars, trees and lights of road networks." }
-        };
+            note.Add(1, "'Network Skins' lets you to change or remove the pillars, trees and lights of transport networks.");
 
-        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 409073164, 1 }, // * No Pillars
-            { 463845891, 1 }, // No Pillars (v1.1 compatible)
-            { 547126602, 1 }, // Street light replacer
-            { 423934526, 1 }, // Tree Replacer
-        };
+            deprecated.Add(463845891, 1); // No Pillars (v1.1 compatible)
+            deprecated.Add(547126602, 1); // Street light replacer
+            deprecated.Add(423934526, 1); // Tree Replacer
+
+            obsolete.Add(409073164, 1); // * No Pillars
+        }
     }
 }

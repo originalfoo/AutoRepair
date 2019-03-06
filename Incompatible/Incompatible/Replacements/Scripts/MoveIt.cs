@@ -1,25 +1,17 @@
-﻿using System.Collections.Generic;
-
-namespace Incompatible.Replacements.Scripts
+﻿namespace Incompatible.Replacements.Scripts
 {
-    class MoveIt : ReplacementBase, IReplacement
+    class MoveIt : ReplacementBase
     {
-        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public MoveIt()
         {
-            { 1619685021, 1 } // Move It! by Quboid
-        };
+            option.Add(1619685021, 1); // Move It! by Quboid
 
-        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Powerful and reliable tool to move and align networks, props and more." }
-        };
+            note.Add(1, "'Move It!' lets you move, bend and align networks, props and more.");
 
-        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 658653260, 1 },  // * Network nodes editor
-            { 1434173135, 1 }, // * Move It (Chinese version)
-            { 1120637951, 1 }, // * Move It Extra Filters
-            { 1622545887, 1 }, // * Move It (Legacy Edition)
-        };
+            obsolete.Add(658653260, 1);  // * Network nodes editor
+            obsolete.Add(1434173135, 1); // * Move It (Chinese version)
+            obsolete.Add(1120637951, 1); // * Move It Extra Filters
+            obsolete.Add(1622545887, 1); // * Move It (Legacy Edition)
+        }
     }
 }

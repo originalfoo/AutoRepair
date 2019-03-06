@@ -1,27 +1,20 @@
-﻿using System.Collections.Generic;
-
-namespace Incompatible.Replacements.Scripts
+﻿namespace Incompatible.Replacements.Scripts
 {
-    class RoadOptions : ReplacementBase, IReplacement
+    class RoadOptions : ReplacementBase
     {
-        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public RoadOptions()
         {
-            { 932192868, 1 } // Road Options (Road Color Changer++) by TPB
-        };
+            option.Add(932192868, 1); // Road Options (Road Color Changer++) by TPB
 
-        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Allows you to change road surface color, remove props and decals (lane markings, arrows, crossings)." }
-        };
+            note.Add(1, "'Road options' allows you to change road color and remove props & decals (lane markings, arrows, crossings).");
 
-        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 417585852, 1 },  // * Road Color Changer (original)
-            { 651610627, 1 },  // * Road Color Changer Continued
-            { 1128766708, 1 }, // Remove Road Textures - Blank Roads
-            { 1117087491, 1 }, // Remove Road Props
-            { 1147015481, 1 }, // * No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
-            { 956707300, 1 },  // Remove Street Arrows
-        };
+            deprecated.Add(1128766708, 1); // Remove Road Textures - Blank Roads
+            deprecated.Add(1117087491, 1); // Remove Road Props
+            deprecated.Add(956707300, 1);  // Remove Street Arrows
+
+            obsolete.Add(417585852, 1);  // * Road Color Changer (original)
+            obsolete.Add(651610627, 1);  // * Road Color Changer Continued
+            obsolete.Add(1147015481, 1); // * No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+        }
     }
 }

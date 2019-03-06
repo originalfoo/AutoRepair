@@ -1,26 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace Incompatible.Replacements.Scripts
+﻿namespace Incompatible.Replacements.Scripts
 {
-    class ShowIt : ReplacementBase, IReplacement
+    class ShowIt : ReplacementBase
     {
-        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public ShowIt()
         {
-            { 1556715327, 1 } // Show It! by Keallu
-        };
+            option.Add(1556715327, 1); // Show It! by Keallu
 
-        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Reliable, accurate and fast vital indicators for zoned buildings." }
-        };
+            note.Add(1, "'Show It!' adds reliable, accurate and fast vital indicator graphs to zoned building info panels.");
 
-        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
-        {
-            { 1133108993, 1 }, // * Extended Building Information (1.10+)
-            { 767809751, 1 },  // * Extended Building Information (Chinese)
-            { 414469593, 1 },  // * Extended Building Information
-            { 670422128, 1 },  // * Extended Building Information
-            { 928988785, 1 },  // * Extended Building Information
-        };
+            obsolete.Add(1133108993, 1); // * Extended Building Information (1.10+)
+            obsolete.Add(767809751, 1);  // * Extended Building Information (Chinese)
+            obsolete.Add(414469593, 1);  // * Extended Building Information
+            obsolete.Add(670422128, 1);  // * Extended Building Information
+            obsolete.Add(928988785, 1);  // * Extended Building Information
+        }
     }
 }

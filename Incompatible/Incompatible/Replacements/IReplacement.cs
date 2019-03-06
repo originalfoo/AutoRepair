@@ -4,7 +4,7 @@ using static ColossalFramework.Plugins.PluginManager;
 namespace Incompatible.Replacements
 {
     // determines which replaacement groups a user can select
-    public enum Selection
+    public enum Select
     {
         Any,     // user can select one or more groups
         OnlyOne, // user can only select one group
@@ -13,29 +13,30 @@ namespace Incompatible.Replacements
 
     interface IReplacement
     {
-        // should the replacement always be shown?
-        // * true = show if any deprecated mods are found
-        // * false = show only if broken mods are found
-        bool Always { get; }
+        // Should we always recommend the upgrade?
+        // * true = show if any of deprecated mods are installed
+        // * false = show only if broken mods are installed
+        bool Mandatory { get; }
 
         // If more than one replacement is defined, how can user select them?
-        Selection Mode { get; }
+        Select Choice { get; }
 
-        // In the following 3 properties, the 'byte' is used as a simple grouping
+        // In the following 4 properties, the 'byte' is used as a simple grouping
         // mechanism. Use bitwise operators to combine two or more groups. You will
         // have to use power of two numbers to denote the groups, for example:
         // 1, 2, 4, 8...
 
         // workshop id(s) of mod(s) to upgrade to
-        Dictionary<ulong,byte> Replacements { get; }
+        Dictionary<ulong,byte> Option { get; }
 
         // some text to give user more info about the upgrade
-        Dictionary<byte, string> Notes { get; }
+        Dictionary<byte, string> Note { get; }
 
-        // workshop id(s) of mod(s) that will be replaced when upgrading
-        // * broken mods will be unsubscribed
-        // * non-broken mods can be merely disabled
-        Dictionary<ulong,byte> Deprecates { get; }
+        // deprecated mods that must be disabled but can optionally be removed
+        Dictionary<ulong,byte> Deprecated { get; }
+
+        // obsolete mods that must be removed
+        Dictionary<ulong,byte> Obsolete { get; }
 
         // Called before unsubbing a deprecated plugin
         // Tips:

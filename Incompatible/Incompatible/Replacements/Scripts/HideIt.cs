@@ -1,83 +1,79 @@
-﻿using System.Collections.Generic;
-using static ColossalFramework.Plugins.PluginManager;
+﻿using static ColossalFramework.Plugins.PluginManager;
 
 namespace Incompatible.Replacements.Scripts
 {
-    class HideIt : ReplacementBase, IReplacement
+    class HideIt : ReplacementBase
     {
-        protected new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        public HideIt()
         {
-            { 1591417160, 1 } // Hide It! by Keallu
-        };
+            option.Add(1591417160, 1); // Hide It! by Keallu
 
-        protected new Dictionary<byte, string> notes = new Dictionary<byte, string>()
-        {
-            { 1, "Hide It enables you to hide a wide range of things in a fast, reliable manner." }
-        };
+            note.Add(1, "'Hide It' lets you choose which props, effects, selectors, animals, and interface elements to hide without causing any game lag.");
 
-        protected new Dictionary<ulong,byte> deprecates = new Dictionary<ulong,byte>()
-        {
             // animal removal mods (all but one are broken)
 
-            { 421050717, 1 },  // * [ARIS] Remove Cows .
-            { 587545554, 1 },  // * Remove Cows [Fixed for v1.4 +] .
-            { 813835951, 1 },  // * Remove Cows [1.6] .
-            { 421052798, 1 },  // * [ARIS] Remove Pigs .
-            { 587549083, 1 },  // * Remove Pigs [Fixed for v1.4 +] .
-            { 813835851, 1 },  // * Remove Pigs [1.6] .
-            { 421041154, 1 },  // * [ARIS] Remove Seagulls .
-            { 587536931, 1 },  // * Remove Seagulls [Fixed for v1.4 +] .
-            { 813835673, 1 },  // * Remove Seagulls [1.6] .
-            { 564141599, 1 },  // No seagulls (this mod isn't broken) .
+            deprecated.Add(564141599, 1);  // No seagulls (this mod isn't broken) .
+
+            obsolete.Add(421050717, 1); // * [ARIS] Remove Cows .
+            obsolete.Add(587545554, 1); // * Remove Cows [Fixed for v1.4 +] .
+            obsolete.Add(813835951, 1); // * Remove Cows [1.6] .
+            obsolete.Add(421052798, 1); // * [ARIS] Remove Pigs .
+            obsolete.Add(587549083, 1); // * Remove Pigs [Fixed for v1.4 +] .
+            obsolete.Add(813835851, 1); // * Remove Pigs [1.6] .
+            obsolete.Add(421041154, 1); // * [ARIS] Remove Seagulls .
+            obsolete.Add(587536931, 1); // * Remove Seagulls [Fixed for v1.4 +] .
+            obsolete.Add(813835673, 1); // * Remove Seagulls [1.6] .
 
             // pollution mods
 
-            { 407270433, 1 },  // * No more purple pollution (normal grass) .
-            { 407795371, 1 },  // * No more purple pollution (brown grass) .
-            { 407810495, 1 },  // * No more purple pollution (tan grass) .
-            { 407842191, 1 },  // * No more purple pollution (red-brown grass) .
-            { 407890452, 1 },  // * No more purple pollution (grey grass) .
-            { 482360157, 1 },  // * No more purple pollution (radioactive green grass) .
-            { 408126080, 1 },  // * No more purple pollution (brown water) .
-            { 408126282, 1 },  // * No more purple pollution (green water) .
-            { 408190203, 1 },  // * No more purple pollution (muddy water) .
-            { 408189919, 1 },  // * No more purple pollution (silty water) .
-            { 408167727, 1 },  // * No more purple pollution (radioactive green water) .
-            { 491002883, 1 },  // Pale Green Pollution (Tropical Boreal) .
-            { 490998828, 1 },  // Pale Green Pollition (Temperate) .
-            { 491003892, 1 },  // Pale Green Pollution (European) .
-            { 666425898, 1 },  // No radioactive desert and more! .
+            deprecated.Add(491002883, 1); // Pale Green Pollution (Tropical Boreal) .
+            deprecated.Add(490998828, 1); // Pale Green Pollition (Temperate) .
+            deprecated.Add(491003892, 1); // Pale Green Pollution (European) .
+            deprecated.Add(666425898, 1); // No radioactive desert and more! .
+
+            obsolete.Add(407270433, 1); // * No more purple pollution (normal grass) .
+            obsolete.Add(407795371, 1); // * No more purple pollution (brown grass) .
+            obsolete.Add(407810495, 1); // * No more purple pollution (tan grass) .
+            obsolete.Add(407842191, 1); // * No more purple pollution (red-brown grass) .
+            obsolete.Add(407890452, 1); // * No more purple pollution (grey grass) .
+            obsolete.Add(482360157, 1); // * No more purple pollution (radioactive green grass) .
+            obsolete.Add(408126080, 1); // * No more purple pollution (brown water) .
+            obsolete.Add(408126282, 1); // * No more purple pollution (green water) .
+            obsolete.Add(408190203, 1); // * No more purple pollution (muddy water) .
+            obsolete.Add(408189919, 1); // * No more purple pollution (silty water) .
+            obsolete.Add(408167727, 1); // * No more purple pollution (radioactive green water) .
 
             // prop, effect and sprite removal mods
 
-            { 547533304, 1 },  // Remove decoration sprites (grass and rocks) .
-            { 548149310, 1 },  // Remove dirt (trees and props) .
-            { 523824395, 1 },  // Clouds & Fog toggler
-            { 518456166, 1 },  // Prop remover
-            { 1627469414, 1 }, // No Parking (removes parking lots from broken builings)
-            { 1117087491, 1 }, // Remove road props
-            { 956707300, 1 },  // Remove street (lane) arrows .
-            { 919020932, 1 },  // Stop remover .
-            { 952542692, 1 },  // Airport road light remover
-            { 949061920, 1 },  // No buoys mod .
+            deprecated.Add(547533304, 1);  // Remove decoration sprites (grass and rocks) .
+            deprecated.Add(548149310, 1);  // Remove dirt (trees and props) .
+            deprecated.Add(523824395, 1);  // Clouds & Fog toggler
+            deprecated.Add(518456166, 1);  // Prop remover
+            deprecated.Add(1627469414, 1); // No Parking (removes parking lots from broken builings)
+            deprecated.Add(1117087491, 1); // Remove road props
+            deprecated.Add(956707300, 1);  // Remove street (lane) arrows .
+            deprecated.Add(919020932, 1);  // Stop remover .
+            deprecated.Add(952542692, 1);  // Airport road light remover
+            deprecated.Add(949061920, 1);  // No buoys mod .
 
             // ui removal mods
 
-            { 417926819, 1 },  // * Road Assistant (note: Hide It obviously doesn't do the grid thing that this mod does, but does everything else)
-            { 553319260, 1 },  // Hide border line and asset editor grid .
-            { 417565011, 1 },  // NOtifications (building notification bubble remover) .
-            { 561293123, 1 },  // Hide Problems aka Politicians' Mod .
-            { 446764406, 1 },  // No border limit camera .
-            { 433557907, 1 },  // District UI tweaks: Hide names .
-            { 439360165, 1 },  // Hide district policy icons .
-            { 451193058, 1 },  // The original hide policy icons .
-            { 1536223783, 1 }, // Hide selectors .
-            { 405791507, 1 },  // Chirpy exterminator .
-            { 810373922, 1 },  // Remove chirper .
-            { 648476299, 1 },  // Chirper remover .
-            { 422603366, 1 },  // Disable chirper .
-            { 411307025, 1 },  // Chirp remover .
-        };
+            deprecated.Add(553319260, 1);  // Hide border line and asset editor grid .
+            deprecated.Add(417565011, 1);  // NOtifications (building notification bubble remover) .
+            deprecated.Add(561293123, 1);  // Hide Problems aka Politicians' Mod .
+            deprecated.Add(446764406, 1);  // No border limit camera .
+            deprecated.Add(433557907, 1);  // District UI tweaks: Hide names .
+            deprecated.Add(439360165, 1);  // Hide district policy icons .
+            deprecated.Add(451193058, 1);  // The original hide policy icons .
+            deprecated.Add(1536223783, 1); // Hide selectors .
+            deprecated.Add(405791507, 1);  // Chirpy exterminator .
+            deprecated.Add(810373922, 1);  // Remove chirper .
+            deprecated.Add(648476299, 1);  // Chirper remover .
+            deprecated.Add(422603366, 1);  // Disable chirper .
+            deprecated.Add(411307025, 1);  // Chirp remover .
+
+            obsolete.Add(417926819, 1);  // * Road Assistant (note: Hide It obviously doesn't do the grid thing that this mod does, but does everything else)
+        }
 
         // Hide It features (false = don't hide; true = hide)
         private bool cows = false;
@@ -96,9 +92,9 @@ namespace Incompatible.Replacements.Scripts
         private bool buoys = false;
         private bool notifications = false;
         private bool stops = false; // bus and tram stops
-        private bool roadArrows = false;
-        private bool tramArrows = false;
-        private bool bikeArrows = false;
+        private bool arrowsRoad = false;
+        private bool arrowsTram = false;
+        private bool arrowsBike = false;
         private bool colorShoreline = false;
         private bool colorPollutionGrass = false;
         private bool colorPollutionWater = false;
@@ -199,7 +195,7 @@ namespace Incompatible.Replacements.Scripts
                 case 956707300:
                     if (plugin.isEnabled)
                     {
-                        Settings.From956707300(out roadArrows, out tramArrows, out bikeArrows);
+                        Settings.From956707300(out arrowsRoad, out arrowsTram, out arrowsBike);
                     }
                     break;
 

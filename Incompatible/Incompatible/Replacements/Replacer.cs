@@ -9,25 +9,20 @@ namespace Incompatible.Replacements
     {
         public void Run()
         {
-//            Dictionary<ulong, PluginManager.PluginInfo> brokenMods = Broken.ModsInstalled();
+            Dictionary<ulong, PluginManager.PluginInfo> brokenMods = Broken.ModsInstalled();
 
             foreach (IReplacement script in Scripts)
             {
                 Debug.Log(script.ToString());
 
-
-                // why is this failing?
-                foreach (ulong deprecation in script.Deprecates.Keys)
+                foreach (ulong obsolete in script.Obsolete.Keys)
                 {
+                    Debug.Log($"{obsolete}");
 
-                    //Debug.Log($"{deprecation}");
-
-/*
-                    if (brokenMods.ContainsKey(deprecation))
+                    if (brokenMods.ContainsKey(obsolete))
                     {
-                        Debug.Log($"[{Mod.name}] DETECT: {deprecation} REPLACE WITH: {script.Replacements}");
+                        Debug.Log($"[{Mod.name}] DETECT: {obsolete} REPLACE WITH: {script.Option}");
                     }
-*/
                 }
             }
         }

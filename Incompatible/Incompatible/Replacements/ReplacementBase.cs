@@ -3,23 +3,31 @@ using ColossalFramework.Plugins;
 
 namespace Incompatible.Replacements
 {
-    class ReplacementBase
+    abstract class ReplacementBase : IReplacement
     {
-        public virtual bool Always => false;
+        protected bool mandatory = false;
 
-        public virtual Selection Mode => Selection.OnlyOne;
+        public virtual bool Mandatory => mandatory;
 
-        protected Dictionary<ulong, byte> replacements = null;
+        protected Select choice = Select.OnlyOne;
 
-        public virtual Dictionary<ulong, byte> Replacements => replacements;
+        public Select Choice => choice;
 
-        protected Dictionary<byte, string> notes = null;
+        protected Dictionary<ulong, byte> option = new Dictionary<ulong, byte>();
 
-        public virtual Dictionary<byte, string> Notes => notes;
+        public virtual Dictionary<ulong, byte> Option => option;
 
-        protected Dictionary<ulong, byte> deprecates = null;
+        protected Dictionary<byte, string> note = new Dictionary<byte, string>();
 
-        public virtual Dictionary<ulong, byte> Deprecates => deprecates;
+        public virtual Dictionary<byte, string> Note => note;
+
+        protected Dictionary<ulong, byte> deprecated = new Dictionary<ulong, byte>();
+
+        public virtual Dictionary<ulong, byte> Deprecated => deprecated;
+
+        protected Dictionary<ulong, byte> obsolete = new Dictionary<ulong, byte>();
+
+        public virtual Dictionary<ulong, byte> Obsolete => obsolete;
 
         protected bool wasEnabled = false;
 
