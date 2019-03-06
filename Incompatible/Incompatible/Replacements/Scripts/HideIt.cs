@@ -1,21 +1,22 @@
 ﻿using System.Collections.Generic;
 using static ColossalFramework.Plugins.PluginManager;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     class HideIt : ReplacementBase, IReplacement
     {
-        internal new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>() {
+        protected new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        {
             { 1591417160, 1 } // Hide It! by Keallu
         };
 
-        internal new Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "Hide It enables you to hide a wide range of things in a fast, reliable manner." }
         };
 
-        internal new Dictionary<ulong,byte> deprecates = new Dictionary<ulong,byte>() {
-
+        protected new Dictionary<ulong,byte> deprecates = new Dictionary<ulong,byte>()
+        {
             // animal removal mods (all but one are broken)
 
             { 421050717, 1 },  // * [ARIS] Remove Cows .

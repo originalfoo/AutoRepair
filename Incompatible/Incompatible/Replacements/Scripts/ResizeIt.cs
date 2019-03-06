@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
      /*
      * Why 'Resize It!' instead of 'More Advanced Toolbar'?
@@ -20,17 +20,17 @@ namespace Incompatible.Replacements
 
     class ResizeIt : ReplacementBase, IReplacement
     {
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 1577882296, 1 } // Resize It! by Keallu
         };
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "Enables you to resize build menus (toolbars), including Find It! and Ploppable RICO toolbars." }
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 563229150, 1 },  // * Advanced Toolbar
             { 451700838, 1 },  // * Extended Toolbar

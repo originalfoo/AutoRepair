@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     /*
     * Why recommend upgrading 'More Beautification' to 'Find It'?
@@ -19,17 +19,17 @@ namespace Incompatible.Replacements
     {
         public override bool Always => true;
 
-        internal new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 837734529u, 1 } // Find It! by SamSamTS
         };
 
-        internal new Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "A fast searchable and filterable build menu providing access to all assets including props." }
         };
 
-        internal new Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 540758804, 1 }, // * Search Box Mod
             { 505480567, 1 }, // More beautification (causes lag)

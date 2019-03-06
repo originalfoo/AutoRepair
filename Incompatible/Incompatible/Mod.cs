@@ -4,6 +4,7 @@ using ColossalFramework.UI;
 using UnityEngine;
 using System.Collections.Generic;
 using ColossalFramework.Plugins;
+using Incompatible.Replacements;
 
 namespace Incompatible
 {
@@ -57,9 +58,12 @@ namespace Incompatible
 
             // List of installed broken/obsolete mods
 
-            Dictionary<ulong, PluginManager.PluginInfo> broken = Broken.ModsInstalled();
+
 
             // Replacements
+
+            Replacer replacer = new Replacer();
+            replacer.Run();
 
             // Dependencies
 
@@ -71,7 +75,7 @@ namespace Incompatible
         public static bool UnexpectedGameVersion()
         {
             Debug.Log($"[{name}] Detected game version: {BuildConfig.applicationVersionFull}");
-            return (GameVersionB != BuildConfig.APPLICATION_VERSION_B && GameVersionA != BuildConfig.APPLICATION_VERSION_A);
+            return (GameVersionB != BuildConfig.APPLICATION_VERSION_B || GameVersionA != BuildConfig.APPLICATION_VERSION_A);
         }
     }
 }

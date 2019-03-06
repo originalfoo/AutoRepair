@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
 using ColossalFramework.Plugins;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     class Landscaping : ReplacementBase, IReplacement
     {
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 502750307, 1 } // Extra Landscaping Tools by BloodyPenguin
         };
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "Adds terraforming, natural resource, water and tree painter to the game." }
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 411095553, 1 }, // * Terraform tool 0.9
             { 406723376, 1 }, // Tree Brush

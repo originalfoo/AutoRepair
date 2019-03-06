@@ -7,19 +7,19 @@ namespace Incompatible.Replacements
     {
         public virtual bool Always => false;
 
-        public virtual Selection Mode => Selection.Any;
+        public virtual Selection Mode => Selection.OnlyOne;
 
-        internal Dictionary<ulong, byte> replacements = null;
+        protected Dictionary<ulong, byte> replacements = null;
 
-        public Dictionary<ulong, byte> Replacements => replacements;
+        public virtual Dictionary<ulong, byte> Replacements => replacements;
 
-        internal Dictionary<byte, string> notes = null;
+        protected Dictionary<byte, string> notes = null;
 
-        public Dictionary<byte, string> Notes => notes;
+        public virtual Dictionary<byte, string> Notes => notes;
 
-        internal Dictionary<ulong, byte> deprecates = null;
+        protected Dictionary<ulong, byte> deprecates = null;
 
-        public Dictionary<ulong, byte> Deprecates => deprecates;
+        public virtual Dictionary<ulong, byte> Deprecates => deprecates;
 
         protected bool wasEnabled = false;
 

@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     class TrafficManager : ReplacementBase, IReplacement
     {
         public override Selection Mode => Selection.OnlyOne;
 
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 583429740, 1 },  // TM:PE Stable
             { 1637663252, 2 }, // TM:PE Labs
         };
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "TM:PE (Stable): Advanced traffic management tools for your city." },
             { 2, "TM:PE (Labs): The experimental branch where you can try upcoming features, but there might be bugs!" },
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 492391912, 3 },  // * Improvedd AI (Traffic++)
             { 409184143, 3 },  // * Traffic++

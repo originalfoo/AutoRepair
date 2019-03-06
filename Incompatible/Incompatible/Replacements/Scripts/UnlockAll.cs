@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using ColossalFramework.Plugins;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
-    class UnblockAll : ReplacementBase, IReplacement
+    class UnlockAll : ReplacementBase, IReplacement
     {
         public override Selection Mode => Selection.OnlyOne;
 
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { Helper.CitiesSkylinesFeature, 1 }, // CSL 'Unlock All' Mod
             { 1237383751, 2 }, // Extended Game Options
@@ -15,13 +15,13 @@ namespace Incompatible.Replacements
 
         // See Also: /Conflicts/ExtendedGameOptions.cs 
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "'Unlock All' mod is bundled with Cities: Skylines. It unlocks all milestones at the start of a game." },
             { 2, "'Extended Game Options' mod allows you to choose which milestone you want to start at." },
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 438378843, 3 },  // * UnlockAll
             { 431993428, 3 },  // * UnlockAll

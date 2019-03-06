@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     // note: this is for 25 tiles, for more see 81Tiles.cs
     class PurchaseIt : ReplacementBase, IReplacement
     {
         public override Selection Mode => Selection.OnlyOne;
 
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 1612287735, 1 }, // Purchase It!
             { 1237383751, 2 }, // Extended Game Options
@@ -15,7 +15,7 @@ namespace Incompatible.Replacements
 
         // See Also: /Conflicts/ExtendedGameOptions.cs 
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "'Purchase It!' allows you to buy up to 25 tiles in any order -" +
                  " they don't need to be next to each other." },
@@ -23,7 +23,7 @@ namespace Incompatible.Replacements
                  " but they must be adjacent to each other."}
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 616078328, 3 },  // * All tile start
             { 405904895, 3 },  // OpenAllTiles

@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     class RoadOptions : ReplacementBase, IReplacement
     {
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { 932192868, 1 } // Road Options (Road Color Changer++) by TPB
         };
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "Allows you to change road surface color, remove props and decals (lane markings, arrows, crossings)." }
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             { 417585852, 1 },  // * Road Color Changer (original)
             { 651610627, 1 },  // * Road Color Changer Continued

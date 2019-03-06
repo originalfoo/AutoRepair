@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
 using ColossalFramework.Plugins;
 
-namespace Incompatible.Replacements
+namespace Incompatible.Replacements.Scripts
 {
     class UnlimitedMoney : ReplacementBase, IReplacement
     {
-        internal new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> replacements = new Dictionary<ulong, byte>()
         {
             { Helper.CitiesSkylinesFeature, 1 } // CSL 'Unlimited Money' Mod
         };
 
-        internal new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
+        protected new readonly Dictionary<byte, string> notes = new Dictionary<byte, string>()
         {
             { 1, "Cities: Skylines now contains this feature in the base game." },
         };
 
-        internal new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
+        protected new readonly Dictionary<ulong, byte> deprecates = new Dictionary<ulong, byte>()
         {
             // load of spammy "Unlimited Money" style mods (all broken)
             { 438378612, 1 },
