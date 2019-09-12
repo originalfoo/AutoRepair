@@ -4,7 +4,7 @@ namespace AutoRepair {
     using AutoRepair.Enums;
     using AutoRepair.Attributes;
 
-    [OptionsPath("AutoRepair.xml")] // Stored in ...\Steam\steamapps\common\Cities_Skylines
+    [OptionsPath("AutoRepair.Options.xml")] // Stored in ...\Steam\steamapps\common\Cities_Skylines
     public class Options {
         /// <summary>
         /// Causes mod to self-enable when first subscribed.

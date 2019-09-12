@@ -29,7 +29,13 @@ namespace AutoRepair.Enums {
         [Description("Broken by recent game update")]
         BrokenByUpdate,
 
+        // Long-term broken mod, doesn't work
+        // Note: Not the same as BrokenByUpdate
+        [Description("The mod does not work")]
+        LongBroken,
+
         // confirmed working after game update
+        // see list in ModInfo struct
         [Description("Confirmed as working")]
         Verified,
 
@@ -38,9 +44,18 @@ namespace AutoRepair.Enums {
         [Description("Breaks if required items missing")]
         RequiredItems,
 
+        // Mod alters save in such a way that the save won't load if mod not enabled
+        // For example, More Vehicles, 81 Tiles
+        [Description("Save games created with this mod will not load without it")]
+        ChangesSavegame,
+
         // Conflcits badly with some other mods
         // See list in ModInfo struct
         [Description("Conflicts with other mods")]
-        Conflicts
+        Conflicts,
+
+        // Removed from workshop by author or admin
+        [Description("Has been removed from workshop")]
+        NoWorkshop,
     }
 }
