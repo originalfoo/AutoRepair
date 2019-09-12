@@ -10,29 +10,6 @@ namespace AutoRepair.Util {
     public static class PluginTools {
 
         /// <summary>
-        /// Fake workshop id used to denote vanilla game feature.
-        /// Can be used in <see cref="ModDetails.Replacements"/> and <see cref="ModDetails.Conflicts"/>
-        /// </summary>
-        public static readonly ulong VanillaGame = 1;
-
-        /// <summary>
-        /// Fake workshop id used to denote bundled UnlockAll mod.
-        /// Can be used in <see cref="ModDetails.Replacements"/> and <see cref="ModDetails.Conflicts"/>
-        /// </summary>
-        public static readonly ulong UnlockAll = 2;
-
-        /// <summary>
-        /// Fake workshop id used to denote bundled UnlimitedMoney mod.
-        /// Can be used in <see cref="ModDetails.Replacements"/> and <see cref="ModDetails.Conflicts"/>
-        /// </summary>
-        public static readonly ulong UnlimitedMoney = 3;
-
-        public static readonly ulong UnlimitedSoil = 4;
-
-        public static readonly ulong UnlimitedOilOre = 5;
-
-
-        /// <summary>
         /// Returns a list of all plugins, including bundled mods, camera scripts and 
         /// </summary>
         public static IEnumerable<PluginInfo> ListOfAllPlugins => Singleton<PluginManager>.instance.GetPluginsInfo();
