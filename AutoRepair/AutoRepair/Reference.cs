@@ -26,7 +26,7 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 886603352u,
                 Name = "Prop Unlimiter",
-                Flags = ModFlags.GameBreaking | ModFlags.NoWorkshop | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.ChangesSavegame | ModFlags.NoWorkshop | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
@@ -97,12 +97,14 @@ namespace AutoRepair {
 
             #region Fine Road Anarchy & Fine Road Tool
 
+            // Conflict lists updated later
+
             Add(new ModDetails {
                 WorkshopId = 433567230u,
                 Name = "Advanced Road Anarchy",
                 Flags = ModFlags.GameBreaking | ModFlags.NoWorkshop | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -110,8 +112,8 @@ namespace AutoRepair {
                 WorkshopId = 1362508329u,
                 Name = "Fine Road Anarchy 2018",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -119,8 +121,8 @@ namespace AutoRepair {
                 WorkshopId = 1436255148u,
                 Name = "Fine Road Anarchy 汉化版 1.3.5",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -128,8 +130,8 @@ namespace AutoRepair {
                 WorkshopId = 553184329u,
                 Name = "Sharp Junction Angles",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -137,8 +139,8 @@ namespace AutoRepair {
                 WorkshopId = 418556522u,
                 Name = "Road Anarchy",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -146,8 +148,8 @@ namespace AutoRepair {
                 WorkshopId = 954034590u,
                 Name = "Road Anarchy V2",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
@@ -155,14 +157,14 @@ namespace AutoRepair {
                 WorkshopId = 448434637u,
                 Name = "Enhanced Road Heights",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { FineRoadAnarchy, FineRoadTool },
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["FineRoadAnarchy"], Common["FineRoadTool"] },
                 NeedAllReplacements = true
             });
 
             // Fine Road Anarchy (BoogieManSam)
             Add(new ModDetails {
-                WorkshopId = FineRoadAnarchy,
+                WorkshopId = Common["FineRoadAnarchy"],
                 Name = "Fine Road Anarchy",
                 Flags = ModFlags.Verified,
                 GameVersion = { "1.12" },
@@ -171,7 +173,7 @@ namespace AutoRepair {
 
             // Fine Road Tool (BoogieManSam)
             Add(new ModDetails {
-                WorkshopId = FineRoadTool,
+                WorkshopId = Common["FineRoadTool"],
                 Name = "Fine Road Tool",
                 Flags = ModFlags.Verified,
                 GameVersion = { "1.12" },
@@ -182,49 +184,51 @@ namespace AutoRepair {
 
             #region 81 Tiles
 
+            // Conflcit lists updated later
+
             Add(new ModDetails {
                 WorkshopId = 1361478243u,
                 Name = "81 Tiles",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.ChangesSavegame,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { Tiles81 }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["Tiles81"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 1575247594u,
                 Name = "81 Tiles Fixed for 1",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.ChangesSavegame,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { Tiles81 }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["Tiles81"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 1560122066u,
                 Name = "81MOD",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.ChangesSavegame,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { Tiles81 }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["Tiles81"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 548208563u,
                 Name = "81 Tiles",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.ChangesSavegame,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { Tiles81 }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["Tiles81"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 422554572u,
                 Name = "81 Tiles Updated",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.ChangesSavegame,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { Tiles81 }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["Tiles81"] }
             });
 
             // 81 tiles
             Add(new ModDetails {
-                WorkshopId = Tiles81,
+                WorkshopId = Common["Tiles81"], // BloodyPenguin
                 Name = "81 Tiles (Fixed for 1.2+)",
                 Flags = ModFlags.MinorBugs | ModFlags.Laggy | ModFlags.ChangesSavegame | ModFlags.Verified,
                 Warnings = { "Glitches if disaster detection buildings are placed outside central 25 Tiles." },
@@ -236,49 +240,51 @@ namespace AutoRepair {
 
             #region Show It!
 
+            // Conflict lists updated later
+
             Add(new ModDetails {
                 WorkshopId = 1133108993u,
                 Name = "Extended Building Information (1.10+)",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { ShowIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["ShowIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 767809751u,
                 Name = "Extended Building Information (Chinese)",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { ShowIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["ShowIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 414469593u,
                 Name = "Extended Building Information",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { ShowIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["ShowIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 670422128u,
                 Name = "Extended Building Information",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { ShowIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["ShowIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 928988785u,
                 Name = "Extended Building Information",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { ShowIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["ShowIt"] }
             });
 
             // Show It
             Add(new ModDetails {
-                WorkshopId = ShowIt,
+                WorkshopId = Common["ShowIt"],
                 Name = "Show It!",
                 Flags = ModFlags.Verified,
                 GameVersion = { "1.12" },
@@ -295,7 +301,7 @@ namespace AutoRepair {
                 WorkshopId = 405904895u,
                 Name = "OpenAllTiles",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.VanillaGame },
+                Conflicts = { Vanilla["BaseGame"] },
                 Replacements = { Common["PurchaseIt"] }
             });
 
@@ -344,7 +350,7 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 1265292380u,
                 Name = "UnlockAreaCountLimit",
-                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken,
+                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken | ModFlags.ForceMigration,
                 Conflicts = { },
                 Replacements = { Common["PurchaseIt"] }
             });
@@ -369,7 +375,7 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 417629854u,
                 Name = "AreaAutoUnlock",
-                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken,
+                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken | ModFlags.ForceMigration,
                 Conflicts = { },
                 Replacements = { Common["PurchaseIt"] }
             });
@@ -395,7 +401,7 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 1138679561u,
                 Name = "AllSpacesUnlock",
-                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken,
+                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.LongBroken | ModFlags.ForceMigration,
                 Conflicts = { },
                 Replacements = { Common["PurchaseIt"] }
             });
@@ -471,41 +477,43 @@ namespace AutoRepair {
 
             #region Empty It!
 
+            // Conflict lists updated later
+
             Add(new ModDetails {
                 WorkshopId = 896806060,
                 Name = "Automatic Emptying",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { EmptyIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["EmptyIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 407873631,
                 Name = "Automatic Emptying",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { EmptyIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["EmptyIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 686588890,
                 Name = "Automatic Emptying: Extended",
                 Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { EmptyIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["EmptyIt"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 1182722930,
                 Name = "Automatic Empty",
                 Flags = ModFlags.Unreliable | ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.VanillaGame },
-                Replacements = { EmptyIt }
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["EmptyIt"] }
             });
 
             // Empty It!
             Add(new ModDetails {
-                WorkshopId = EmptyIt,
+                WorkshopId = Common["EmptyIt"],
                 Name = "Empty It!",
                 Flags = ModFlags.Verified,
                 GameVersion = { "1.12" },
@@ -520,96 +528,96 @@ namespace AutoRepair {
                 WorkshopId = 438378612u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 428608882u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 427997113u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 427901620u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 424026003u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 422901712u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 420911882u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 420550550u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 419484397u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 419333753u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 418153488u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 417187838u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
-                Conflicts = { PluginTools.UnlimitedMoney },
-                Replacements = { PluginTools.UnlimitedMoney }
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
             });
 
             #endregion Unlimited Money
@@ -620,78 +628,205 @@ namespace AutoRepair {
                 WorkshopId = 438378843u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 431993428u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 428555989u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"]l }
             });
 
             Add(new ModDetails {
                 WorkshopId = 428555664u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 419329713u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"] }
             });
 
             Add(new ModDetails {
                 WorkshopId = 418975267u,
                 Name = "Unlock All",
                 Flags = ModFlags.Unmaintained | ModFlags.Conflicts,
-                Conflicts = { PluginTools.UnlockAll },
-                Replacements = { PluginTools.UnlockAll }
+                Conflicts = { Vanilla["UnlockAll"] },
+                Replacements = { Vanilla["UnlockAll"] }
             });
 
             #endregion Unlock All
 
+            #region Unlimited Soil
+
+            Add(new ModDetails {
+                WorkshopId = 654586812u,
+                Name = "No Soil Limit",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.ForceMigration,
+                Conflicts = { Vanilla["UnlimitedSoil"] },
+                Replacements = { Vanilla["UnlimitedSoil"] }
+            });
+
+            #endregion
+
+            #region Unlimited Oil & Ore
+
+            Add(new ModDetails {
+                WorkshopId = 852103955u,
+                Name = "InfiniteOilAndOre",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.ForceMigration,
+                Conflicts = { Vanilla["UnlimitedOilOre"] },
+                Replacements = { Vanilla["UnlimitedOilOre"], 580335918u }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 409644467u,
+                Name = "InfiniteOilAndOre",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.NoWorkshop | ModFlags.ForceMigration,
+                Conflicts = { Vanilla["UnlimitedOilOre"] },
+                Replacements = { Vanilla["UnlimitedOilOre"], 580335918u }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 580335918u, // BloodyPenguin
+                Name = "Infinite Oil And Ore Redux [DEPRECATED]",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { Vanilla["UnlimitedOilOre"] },
+                GameVersion = { "1.12" },
+                Replacements = { Vanilla["UnlimitedOilOre"] }
+            });
+
+            #endregion Unlimited Oil & Ore
+
+            #region Bulldoze It! / Rebuild It!
+
+            // Conflict lists updated later
+
+            Add(new ModDetails {
+                WorkshopId = 1628521230u,
+                Name = "Bulldoze Everything *Campus Compatible*",
+                Flags = ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { },
+                GameVersion = { "1.12" },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 1507233911u,
+                Name = "Automatic Bulldoze *Campus Compatible*",
+                Flags = ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { },
+                GameVersion = { "1.12" },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 445799544, // author states dev is on pause, and it requires game breaking mod
+                Name = "V10Bulldoze",
+                Flags = ModFlags.Unmaintained | ModFlags.RequiredItems | ModFlags.Conflicts | ModFlags.LongBroken | ModFlags.ForceMigration,
+                RequiredItems = { 421028969u },
+                Conflicts = { },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 406132323,
+                Name = "Automatic Bulldoze",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.GameBreaking,
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 1393966192,
+                Name = "Automatic Bulldoze Simple Edition v1.1.3",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.GameBreaking,
+                Conflicts = { Vanilla["BaseGame"] },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 639486063,
+                Name = "Automatic Bulldoze v2",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.GameBreaking,
+                Conflicts = { },
+                Replacements = { Common["BulldozeIt"], Common["RebuildIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 503147777,
+                Name = "Moledozer",
+                Flags = ModFlags.Unmaintained | ModFlags.Conflicts | ModFlags.Unreliable,
+                Conflicts = { },
+                Replacements = { Vanilla["BaseGame"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = Common["BulldozeIt"],
+                Name = "Bulldoze It!",
+                Flags = ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { },
+                GameVersion = { "1.12" }
+            }, true);
+
+            Add(new ModDetails {
+                WorkshopId = Common["RebuildIt"],
+                Name = "Rebuild It!",
+                Flags = ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { },
+                GameVersion = { "1.12" }
+            }, true);
+
+            #endregion Bulldoze It! / Rebuild It!
+
         }
 
-#if DEBUG
         internal void Add(ModDetails info, bool autoConflict = false) {
+#if DEBUG
             if (info.WorkshopId == 0u) {
                 Log.Error("[Reference.Add] A workshop ID is missing.");
                 return;
             }
             if (ModsList.ContainsKey(info.WorkshopId)) {
-                Log.Error($"[Reference.Add] Duplicate key: {info.WorkshopId}");
+                Log.Error($"[Reference.Add] Duplicate key: {info.WorkshopId} '{info.Name}'");
                 return;
             }
+#endif
             if (autoConflict) {
                 if (info.Conflicts == null) {
-                    Log.Error($"[Reference.Add] Initialise the .Conflicts list of {info.WorkshopId} before calling .Add");
+                    Log.Error($"[Reference.Add] Initialise the .Conflicts list of {info.WorkshopId} '{info.Name}' before calling .Add");
                     return;
                 }
+
+                // add all the mods replaced by this mod to this mods list of conflicts
                 foreach (KeyValuePair<ulong, ModDetails> entry in ModsList) {
                     if (entry.Value.Replacements != null && entry.Value.Replacements.Contains(info.WorkshopId)) {
                         info.Conflicts.Add(entry.Value.WorkshopId);
                     }
                 }
+
+                // now go through each of the listed conflicts and fill in their missing conflicts
             }
+
             ModsList.Add(info.WorkshopId, info);
         }
-#endif
 
         /// <summary>
         /// Fake workshop id used to denote vanilla game feature.
@@ -711,13 +846,18 @@ namespace AutoRepair {
             { "UnlimitedOilOre", 5u },
         };
 
+        /// <summary>
+        /// Named references for commonly referred-to mods.
+        /// </summary>
         public readonly Dictionary<string, ulong> Common = new Dictionary<string, ulong> {
+            { "BulldozeIt", 1627986403 },
             { "EmptyIt", 1661072176u },
             { "FineRoadAnarchy", 802066100u }, // BoogieManSam
             { "FineRoadTool", 651322972u }, // BoogieManSam
             { "HideIt", 1591417160u },
             { "NoBorderCamera", 446764406u },
             { "PurchaseIt", 1612287735u },
+            { "RebuildIt", 1656549865 },
             { "ShowIt", 1556715327u },
             { "Tiles81", 576327847u },
             { "TMPE_LinuxFan", 583429740u },

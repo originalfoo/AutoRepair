@@ -14,9 +14,6 @@ namespace AutoRepair {
             { 412168106,  "Adjustable Demand v2" },
             { 563229150,  "* Advanced Toolbar" },
             { 408760323,  "Auto Line Color" },
-            { 406132323,  "* Automatic Bulldoze" },
-            { 1393966192, "* Automatic Bulldoze Simple Edition" },
-            { 639486063,  "* Automatic Bulldoze v2" },
 
             { 1228424498, "* Bzimage VehicleCapacity" },
             { 416064574,  "Cimtographer" },
@@ -51,10 +48,7 @@ namespace AutoRepair {
             { 508195208,  "Improved Asset Icons" },
             { 417430545,  "Improved Assets Panel" },
             { 416033610,  "Improved Mods Panel" },
-            { 852103955,  "* InfiniteOilAndOre" },
-            { 580335918,  "* Infinite Oil and Ore Redux" },
             { 472128528,  "Larger Footprints" }, // no replacement
-            { 503147777,  "* MoleDozer" },
             { 1434173135, "* Move It (Chinese version)" },
             { 1120637951, "* Move It Extra Filters" },
             { 1622545887, "* Move It (Legacy Edition)" },
@@ -77,7 +71,6 @@ namespace AutoRepair {
             { 408189919,  "* No more purple pollution (silty water)" },
             { 408167727,  "* No more purple pollution (radioactive green water)" },
             { 409073164,  "* No pillars" },
-            { 654586812,  "* No Soil Limit" },
             { 771161159,  "OSM Import" },
             { 410842044,  "Persistent Resource View" },
             { 685747254,  "Prop Fine Tune" },
@@ -118,7 +111,6 @@ namespace AutoRepair {
             { 498363759,  "* Traffic Manager + Improved AI" },
             { 563720449,  "* Traffic Manager + Improved AI (Japanese Ver.)" },
             { 423964385,  "* TreeBrush" },
-            { 445799544,  "* V10Bulldoze" },
             { 414702884,  "Zoneable Pedestrian Paths" }, // no mod replacement, but there are 'road' assets that can be used
             { 421320224,  "Unlock Districts" },
         };
