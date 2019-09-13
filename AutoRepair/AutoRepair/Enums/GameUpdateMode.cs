@@ -1,6 +1,6 @@
-using System.ComponentModel;
-
 namespace AutoRepair.Enums {
+    using System.ComponentModel;
+
     public enum GameUpdateMode {
         [Description("Do nothing (may cause crashes)")]
         DoNothing,

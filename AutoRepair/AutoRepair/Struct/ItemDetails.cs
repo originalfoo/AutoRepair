@@ -2,12 +2,12 @@ namespace AutoRepair.Struct {
     using AutoRepair.Enums;
     using System.Collections.Generic;
 
-    public struct ModDetails {
+    public struct ItemDetails {
         // Workshop ID of the mod (even if no longer in workshop)
-        public ulong WorkshopId; // default: 0
+        public ulong WorkshopId; // default 0
 
         // A summary of the mod
-        public ModFlags Flags; // default: 0
+        public ItemFlags Flags; // default: 0
 
         // Name of the mod (useful if not subscribed or no longer in workshop)
         public string Name;
@@ -35,6 +35,6 @@ namespace AutoRepair.Struct {
 
         // If more than one replacement, is it a choice or should
         // they all be used?
-        public bool NeedAllReplacements; // default: false
+        public ReplacementMode ReplaceMode;
     }
 }

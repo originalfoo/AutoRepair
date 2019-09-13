@@ -3,7 +3,7 @@ namespace AutoRepair.Enums {
     using System.ComponentModel;
 
     [Flags]
-    public enum ModFlags {
+    public enum ItemFlags {
         // Unmaintained and very badly broken
         // Will always be unsubscribed
         [Description("Game-breaking")]
@@ -12,13 +12,8 @@ namespace AutoRepair.Enums {
         // Force migration to replacement mod(s)
         // Example use: Temp fix uploaded to workshop, original then fixed,
         // so force migration to move people back to original
-        // Note: GameBreaking has same effect, but for different reason
         [Description("Mandatory migration required")]
         ForceMigration,
-
-        // currently broken by game update (awaiting fix)
-        [Description("Broken by recent game update")]
-        BrokenByUpdate,
 
         // Long-term broken mod, doesn't work
         // Note: Not the same as BrokenByUpdate
@@ -30,7 +25,17 @@ namespace AutoRepair.Enums {
         [Description("Some minor bugs")]
         MinorBugs,
 
+        // Currently broken by game update (awaiting fix)
+        [Description("Broken by recent game update")]
+        BrokenByUpdate,
+
+        // Confirmed working after game update
+        // see GameVersion in ModInfo struct
+        [Description("Confirmed as working")]
+        Verified,
+
         // Can sometimes break saves (but some users don't have problems)
+        // See Warnings in ModInfo struct
         [Description("Some users report bugs")]
         Unreliable,
 
@@ -39,21 +44,23 @@ namespace AutoRepair.Enums {
         Unmaintained,
 
         // Eats too much CPU
+        // See Warnings in ModInfo struct
         [Description("Can cause lag in-game")]
         Laggy,
 
         // Mod will break without required items
-        // See list in ModInfo struct
+        // See RequiredItems in ModInfo struct
         [Description("Breaks if required items missing")]
         RequiredItems,
 
         // Mod alters save in such a way that the save won't load if mod not enabled
         // For example, More Vehicles, 81 Tiles
+        // See Warnings in ModInfo struct
         [Description("Save games created with this will not load without it")]
         ChangesSavegame,
 
-        // Conflcits badly with some other mods
-        // See list in ModInfo struct
+        // Conflcits with other mods
+        // See Conflicts in ModInfo struct
         [Description("Conflicts with other mods")]
         Conflicts,
 
@@ -61,9 +68,8 @@ namespace AutoRepair.Enums {
         [Description("Has been removed from workshop")]
         NoWorkshop,
 
-        // confirmed working after game update
-        // see list in ModInfo struct
-        [Description("Confirmed as working")]
-        Verified,
+        // The mod is not in our reference dictionary
+        [Description("Auto-repair does not recognise this")]
+        Unrecognised,
     }
 }

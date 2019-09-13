@@ -30,7 +30,7 @@ namespace AutoRepair {
         /// <summary>
         /// Automatically remove game breaking mods?
         ///
-        /// If <c>true</c>, <see cref="ModFlags.GameBreaking"/> mods will be automatically unsubscribed without user intervention.
+        /// If <c>true</c>, <see cref="ItemFlags.GameBreaking"/> mods will be automatically unsubscribed without user intervention.
         /// </summary>
         [ConfigurableOption("On Startup", "Automatically remove game breaking mods")]
         public bool AutoRemoveGameBreakers { get; set; } = true;

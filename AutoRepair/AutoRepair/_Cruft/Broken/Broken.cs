@@ -81,7 +81,6 @@ namespace AutoRepair {
             { 651610627,  "* Road Color Changer Continued" },        
             { 726005715,  "Roads United Core+" },
             { 680748394,  "Roads United: North America" },
-            { 605590542,  "Rush Hour II" },
             { 540758804,  "* Search Box Mod" },
             { 413847191,  "SOM - Services Optimisation Module" },
             { 785237088,  "* Service Radius Adjuster" },
@@ -101,33 +100,6 @@ namespace AutoRepair {
             { 414702884,  "Zoneable Pedestrian Paths" }, // no mod replacement, but there are 'road' assets that can be used
             { 421320224,  "Unlock Districts" },
         };
-
-        // returns a list of which broken mods are currently installed
-        public static Dictionary<ulong, PluginManager.PluginInfo> ModsInstalled() {
-            Debug.Log($"[{Mod.name}] Scanning for broken mods...");
-            Dictionary<ulong, PluginManager.PluginInfo> detected = new Dictionary<ulong, PluginManager.PluginInfo>();
-
-            try {
-                foreach (PluginManager.PluginInfo pluginInfo in Singleton<PluginManager>.instance.GetPluginsInfo()) {
-                    ulong pluginId = pluginInfo.publishedFileID.AsUInt64;
-                    if (!pluginInfo.isBuiltin) {
-                        if (Broken.mods.ContainsKey(pluginId)) // it's on the list of known broken mods
-                        {
-                            Debug.Log($"[{Mod.name}] Broken or obsolete: {pluginInfo.publishedFileID.ToString()} - {Broken.mods[pluginId]}");
-                            detected.Add(pluginInfo.publishedFileID.AsUInt64, pluginInfo);
-                        } else {
-                            // todo: find some way to check if a mod is marked obsolete in steam workshop
-                        }
-                    }
-                }
-            }
-            catch (Exception e) {
-                Debug.Log($"[{Mod.name}] Unable to build broken plugin list...");
-                Debug.LogException(e);
-            }
-
-            return detected;
-        }
 
     }
 
