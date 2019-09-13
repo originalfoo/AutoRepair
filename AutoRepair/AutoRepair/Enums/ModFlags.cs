@@ -9,11 +9,11 @@ namespace AutoRepair.Enums {
         GameBreaking,
 
         // Can sometimes break saves (but some users don't have problems)
-        [Description("Occasional problems")]
+        [Description("Some users report bugs")]
         Unreliable,
 
         // No sign of activity from the author
-        [Description("No longer maintained by author")]
+        [Description("No longer maintained")]
         Unmaintained,
 
         // Bugs that don't break saves
@@ -31,7 +31,7 @@ namespace AutoRepair.Enums {
 
         // Long-term broken mod, doesn't work
         // Note: Not the same as BrokenByUpdate
-        [Description("The mod does not work")]
+        [Description("Long-term broken, unsubscribe")]
         LongBroken,
 
         // confirmed working after game update
@@ -46,7 +46,7 @@ namespace AutoRepair.Enums {
 
         // Mod alters save in such a way that the save won't load if mod not enabled
         // For example, More Vehicles, 81 Tiles
-        [Description("Save games created with this mod will not load without it")]
+        [Description("Save games created with this will not load without it")]
         ChangesSavegame,
 
         // Conflcits badly with some other mods
@@ -57,5 +57,12 @@ namespace AutoRepair.Enums {
         // Removed from workshop by author or admin
         [Description("Has been removed from workshop")]
         NoWorkshop,
+
+        // Force migration to replacement mod(s)
+        // Example use: Temp fix uploaded to workshop, original then fixed,
+        // so force migration to move people back to original
+        // Note: GameBreaking has same effect, but for different reason
+        [Description("Mandatory migration required")]
+        ForceMigration,
     }
 }

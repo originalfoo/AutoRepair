@@ -796,6 +796,127 @@ namespace AutoRepair {
 
             #endregion Bulldoze It! / Rebuild It!
 
+            #region Remove Animals
+
+            // Cows
+
+            Add(new ModDetails {
+                WorkshopId = 421050717,
+                Name = "[ARIS] Remove Cows",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 587545554, 813835951, Common["RemoveAllAnimals"] },
+                RequiredItems = { 421028969 }, // overwatch 1
+                Replacements = { Common["RemoveAllAnimals"] },
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 587545554,
+                Name = "Remove Cows [Fixed for v1.4 +]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 421050717, 813835951, Common["RemoveAllAnimals"] },
+                RequiredItems = { 583538182 }, // overwatch 1.3
+                Replacements = { Common["RemoveAllAnimals"] },
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 813835951,
+                Name = "Remove Cows [1.6]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Conflicts = { 421050717, 587545554, Common["RemoveAllAnimals"] },
+                Replacements = { Common["RemoveAllAnimals"] },
+            });
+
+            // Pigs
+
+            Add(new ModDetails {
+                WorkshopId = 421052798,
+                Name = "[ARIS] Remove Pigs",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 587549083, 813835851, Common["RemoveAllAnimals"] },
+                RequiredItems = { 421028969 }, // overwatch 1
+                Replacements = { Common["RemoveAllAnimals"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 587549083,
+                Name = "Remove Pigs [Fixed for v1.4+]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 421052798, 813835851, Common["RemoveAllAnimals"] },
+                RequiredItems = { 583538182 }, // overwatch 1.3
+                Replacements = { Common["RemoveAllAnimals"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 813835851,
+                Name = "Remove Pigs [1.6]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Conflicts = { 421052798, 587549083, Common["RemoveAllAnimals"] },
+                Replacements = { Common["RemoveAllAnimals"] }
+            });
+
+            // Seagulls
+
+            Add(new ModDetails {
+                WorkshopId = 421041154,
+                Name = "[ARIS] Remove Seagulls",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 587536931, 813835673, 417145328, Common["RemoveAllAnimals"], Common["NoSeagulls"], Common["HideIt"] },
+                RequiredItems = { 421028969 }, // overwatch 1
+                Replacements = { Common["NoSeagulls"], Common["HideIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 587536931,
+                Name = "Remove Seagulls [Fixed for v1.4 +]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems,
+                Conflicts = { 421041154, 813835673, 417145328, Common["RemoveAllAnimals"], Common["NoSeagulls"], Common["HideIt"] },
+                RequiredItems = { 583538182 }, // overwatch 1.3
+                Replacements = { Common["NoSeagulls"], Common["HideIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 813835673,
+                Name = "Remove Seagulls [1.6]",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Conflicts = { 421041154, 587536931, 417145328, Common["RemoveAllAnimals"], Common["NoSeagulls"], Common["HideIt"] },
+                Replacements = { Common["NoSeagulls"], Common["HideIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 417145328,
+                Name = "[Deprecated] Kill the Seagulls!",
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Conflicts = { 421041154, 587536931, 813835673, Common["RemoveAllAnimals"], Common["HideIt"] },
+                Replacements = { Common["NoSeagulls"], Common["HideIt"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = Common["NoSeagulls"],
+                Name = "No Seagulls",
+                Flags = ModFlags.Conflicts | ModFlags.Verified,
+                Conflicts = { 421041154, 587536931, 813835673, 417145328, Common["RemoveAllAnimals"], Common["HideIt"] },
+                GameVersion = { "1.2" },
+                Replacements = { Common["HideIt"] }
+            });
+
+            // Other
+
+            Add(new ModDetails {
+                WorkshopId = Common["RemoveAllAnimals"],
+                Name = "Remove All Animals",
+                Flags = ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.Unreliable,
+                Conflicts = {
+                    // Cows
+                    421050717, 587545554, 813835951,
+                    // Pigs
+                    421052798, 587549083, 813835851,
+                    // Seagulls
+                    421041154, 587536931, 813835673, 417145328, Common["NoSeagulls"], Common["HideIt"]
+                },
+                Replacements = { }
+            });
+
+            #endregion Remove Animals
         }
 
         internal void Add(ModDetails info, bool autoConflict = false) {
@@ -856,8 +977,10 @@ namespace AutoRepair {
             { "FineRoadTool", 651322972u }, // BoogieManSam
             { "HideIt", 1591417160u },
             { "NoBorderCamera", 446764406u },
+            { "NoSeagulls", 564141599 },
             { "PurchaseIt", 1612287735u },
             { "RebuildIt", 1656549865 },
+            { "RemoveAllAnimals", 1706704781 },
             { "ShowIt", 1556715327u },
             { "Tiles81", 576327847u },
             { "TMPE_LinuxFan", 583429740u },
