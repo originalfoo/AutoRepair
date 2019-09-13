@@ -17,79 +17,87 @@ namespace AutoRepair {
             #region Broken - No reliable replacement
 
             Add(new ModDetails {
-                WorkshopId = 703971825u,
+                WorkshopId = 418216826,
+                Name = "Alternative Siren Sound",
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.NoWorkshop,
+                Warnings = { "This mod contained a computer virus!" },
+                Conflicts = { Vanilla["BaseGame"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 703971825,
                 Name = "Billboard Animator",
-                Flags = ModFlags.GameBreaking | ModFlags.NoWorkshop | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.NoWorkshop | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 886603352u,
+                WorkshopId = 886603352,
                 Name = "Prop Unlimiter",
-                Flags = ModFlags.GameBreaking | ModFlags.ChangesSavegame | ModFlags.NoWorkshop | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.ChangesSavegame | ModFlags.NoWorkshop | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 439582006u,
+                WorkshopId = 439582006,
                 Name = "[ARIS] Enhanced Garbage Truck AI",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 583552152u,
+                WorkshopId = 583552152,
                 Name = "Enhanced Garbage Truck AI [Fixed for v1.4 +]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 813835391u,
+                WorkshopId = 813835391,
                 Name = "Enhanced Garbage Truck AI [1.6]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.NoWorkshop,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 433249875u,
+                WorkshopId = 433249875,
                 Name = "[ARIS] Enhanced Hearse AI",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 583556014u,
+                WorkshopId = 583556014,
                 Name = "Enhanced Hearse AI [Fixed for v1.4 +]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 813835241u,
+                WorkshopId = 813835241,
                 Name = "Enhanced Hearse AI [1.6]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.NoWorkshop,
                 Conflicts = { Vanilla["BaseGame"], Common["TMPE_LinuxFan"], Common["TMPE_Krzychu"], Common["TMPE_Aubergine"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 421028969u,
+                WorkshopId = 421028969,
                 Name = "[ARIS] Skylines Overwatch",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 583538182u,
+                WorkshopId = 583538182,
                 Name = "Skylines Overwatch [Fixed for v1.3 +]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
             Add(new ModDetails {
-                WorkshopId = 813833476u,
+                WorkshopId = 813833476,
                 Name = "Skylines Overwatch [1.6]",
-                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained,
+                Flags = ModFlags.GameBreaking | ModFlags.Conflicts | ModFlags.Unmaintained | ModFlags.NoWorkshop,
                 Conflicts = { Vanilla["BaseGame"] }
             });
 
@@ -524,6 +532,8 @@ namespace AutoRepair {
 
             #region Unlimited Money
 
+            // Conflict lists updated later
+
             Add(new ModDetails {
                 WorkshopId = 438378612u,
                 Name = "Unlimited Money",
@@ -616,6 +626,14 @@ namespace AutoRepair {
                 WorkshopId = 417187838u,
                 Name = "Unlimited Money",
                 Flags = ModFlags.Unmaintained,
+                Conflicts = { Vanilla["UnlimitedMoney"] },
+                Replacements = { Vanilla["UnlimitedMoney"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 555375742,
+                Name = "Improved unlimited money",
+                Flags = ModFlags.Unmaintained | ModFlags.LongBroken | ModFlags.ForceMigration,
                 Conflicts = { Vanilla["UnlimitedMoney"] },
                 Replacements = { Vanilla["UnlimitedMoney"] }
             });
@@ -821,8 +839,9 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 813835951,
                 Name = "Remove Cows [1.6]",
-                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems | ModFlags.NoWorkshop,
                 Conflicts = { 421050717, 587545554, Common["RemoveAllAnimals"] },
+                RequiredItems = { 813833476 }, // overwatch 1.6
                 Replacements = { Common["RemoveAllAnimals"] },
             });
 
@@ -849,8 +868,9 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 813835851,
                 Name = "Remove Pigs [1.6]",
-                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems | ModFlags.NoWorkshop,
                 Conflicts = { 421052798, 587549083, Common["RemoveAllAnimals"] },
+                RequiredItems = { 813833476 }, // overwatch 1.6
                 Replacements = { Common["RemoveAllAnimals"] }
             });
 
@@ -877,8 +897,9 @@ namespace AutoRepair {
             Add(new ModDetails {
                 WorkshopId = 813835673,
                 Name = "Remove Seagulls [1.6]",
-                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.NoWorkshop,
+                Flags = ModFlags.Conflicts | ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.RequiredItems | ModFlags.NoWorkshop,
                 Conflicts = { 421041154, 587536931, 417145328, Common["RemoveAllAnimals"], Common["NoSeagulls"], Common["HideIt"] },
+                RequiredItems = { 813833476 }, // overwatch 1.6
                 Replacements = { Common["NoSeagulls"], Common["HideIt"] }
             });
 
@@ -913,10 +934,121 @@ namespace AutoRepair {
                     // Seagulls
                     421041154, 587536931, 813835673, 417145328, Common["NoSeagulls"], Common["HideIt"]
                 },
-                Replacements = { }
+                Replacements = { Common["NoSeagulls"], Common["HideIt"] }
             });
 
             #endregion Remove Animals
+
+            #region Content Manager / Options
+
+            // Improved assets panel
+
+            Add(new ModDetails {
+                WorkshopId = 449020940,
+                Name = "Improved Assets Panel",
+                Flags = ModFlags.GameBreaking | ModFlags.NoWorkshop | ModFlags.Conflicts,
+                Conflicts = { Vanilla["BaseGame"], 448687553, 417430545, 814498849 },
+                Replacements = { Vanilla["BaseGame"], 814498849 }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 448687553,
+                Name = "Improved Assets Panel",
+                Flags = ModFlags.GameBreaking | ModFlags.NoWorkshop | ModFlags.Conflicts,
+                Conflicts = { Vanilla["BaseGame"], 449020940, 417430545, 814498849 },
+                Replacements = { Vanilla["BaseGame"], 814498849 }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 417430545,
+                Name = "Improved Assets Panel",
+                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
+                Conflicts = { Vanilla["BaseGame"], 449020940, 448687553, 814498849 },
+                Replacements = { Vanilla["BaseGame"], 814498849 }
+            });
+
+            // Improved mods panel
+
+            Add(new ModDetails {
+                WorkshopId = 416033610,
+                Name = "Improved Mods Panel",
+                Flags = ModFlags.GameBreaking | ModFlags.Unmaintained | ModFlags.Conflicts,
+                Conflicts = { Vanilla["BaseGame"], 814498849 },
+                Replacements = { Vanilla["BaseGame"], 814498849 }
+            });
+
+            // Improved content manager
+
+            Add(new ModDetails {
+                WorkshopId = 814498849,
+                Name = "Improved Content Manager",
+                Flags = ModFlags.Verified | ModFlags.Conflicts,
+                GameVersion = { "1.10", "1.11", "1.12" },
+                Conflicts = { 416033610, 449020940, 448687553, 417430545 },
+                Replacements = { Vanilla["BaseGame"] }
+            });
+
+            // Improved mod uploader
+
+            Add(new ModDetails {
+                WorkshopId = 632951976,
+                Name = "Improved Mod Upload Panel",
+                Flags = ModFlags.Verified,
+                GameVersion = { "1.6", "1.12" },
+                Conflicts = { 416033610, 449020940, 448687553, 417430545 },
+                Replacements = { Vanilla["BaseGame"] }
+            });
+
+            // Options screens
+
+            Add(new ModDetails {
+                WorkshopId = 1762394554,
+                Name = "Wider OptionsPanel",
+                Flags = ModFlags.Verified | ModFlags.Conflicts,
+                GameVersion = { "1.12" },
+                Conflicts = { 1773106708 },
+                Replacements = { Vanilla["BaseGame"], 1773106708 }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 1773106708,
+                Name = "More Advanced OptionsPanel",
+                Flags = ModFlags.Verified | ModFlags.Conflicts,
+                GameVersion = { "1.12" },
+                Conflicts = { 1762394554, 973512634 },
+                Replacements = { Vanilla["BaseGame"], 1762394554, 973512634 }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 973512634,
+                Name = "Sort Mod Settings",
+                Flags = ModFlags.Verified | ModFlags.Conflicts,
+                GameVersion = { "1.12" },
+                Conflicts = { 1773106708 },
+                Replacements = { Vanilla["BaseGame"], 1773106708 }
+            });
+
+            #endregion Content Manager / Options
+
+            #region Misc
+
+            Add(new ModDetails {
+                WorkshopId = 420230361,
+                Name = "Moving Sun",
+                Flags = ModFlags.Unmaintained | ModFlags.LongBroken | ModFlags.ForceMigration,
+                Conflicts = { Vanilla["BaseGame"] }, // TODO: real time, ultimate eye candy, time warps
+                Replacements = { Vanilla["BaseGame"] }
+            });
+
+            Add(new ModDetails {
+                WorkshopId = 436253779,
+                Name = "Road Protractor",
+                Flags = ModFlags.Unmaintained | ModFlags.GameBreaking,
+                Conflicts = { Vanilla["BaseGame"], 445589127, 1768810491 }, // precision engineering, measure it
+                Replacements = { Vanilla["BaseGame"], 445589127, 1768810491 }
+            });
+
+            #endregion Misc
         }
 
         internal void Add(ModDetails info, bool autoConflict = false) {
