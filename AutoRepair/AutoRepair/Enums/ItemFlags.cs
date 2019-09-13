@@ -4,6 +4,10 @@ namespace AutoRepair.Enums {
 
     [Flags]
     public enum ItemFlags {
+
+        // no applicable flags
+        None = 0,
+
         // Unmaintained and very badly broken
         // Will always be unsubscribed
         [Description("Game-breaking")]
@@ -48,21 +52,11 @@ namespace AutoRepair.Enums {
         [Description("Can cause lag in-game")]
         Laggy,
 
-        // Mod will break without required items
-        // See RequiredItems in ModInfo struct
-        [Description("Breaks if required items missing")]
-        RequiredItems,
-
         // Mod alters save in such a way that the save won't load if mod not enabled
         // For example, More Vehicles, 81 Tiles
         // See Warnings in ModInfo struct
         [Description("Save games created with this will not load without it")]
         ChangesSavegame,
-
-        // Conflcits with other mods
-        // See Conflicts in ModInfo struct
-        [Description("Conflicts with other mods")]
-        Conflicts,
 
         // Removed from workshop by author or admin
         [Description("Has been removed from workshop")]

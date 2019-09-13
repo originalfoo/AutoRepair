@@ -3,48 +3,30 @@ namespace AutoRepair {
     using AutoRepair.Struct;
     using AutoRepair.Enums;
     using AutoRepair.Util;
-    public partial class Reference {
+    public partial class Catalog {
 
-        private static Reference instance;
-        public static Reference Instance => instance ?? (instance = new Reference());
+        internal static Catalog instance;
+        public static Catalog Instance => instance ?? (instance = new Catalog());
 
         public Dictionary<ulong, ItemDetails> Mods { get; set; } = new Dictionary<ulong, ItemDetails> { };
 
         public Dictionary<ulong, ItemDetails> Assets { get; set; } = new Dictionary<ulong, ItemDetails> { };
 
-        public Reference() {
+        private Catalog() {
 
             PopulateMods();
 
         }
 
-        internal void Add(ItemDetails info, bool autoConflict = false) {
-#if DEBUG
+        internal void AddMod(ItemDetails info) {
             if (info.WorkshopId == 0u) {
-                Log.Error("[Reference.Add] A workshop ID is missing.");
+                Log.Error("[Catalog.Add] A workshop ID is missing.");
                 return;
             }
             if (Mods.ContainsKey(info.WorkshopId)) {
-                Log.Error($"[Reference.Add] Duplicate key: {info.WorkshopId} '{info.Name}'");
+                Log.Error($"[Catalog.Add] Duplicate key: {info.WorkshopId} '{info.Name}'");
                 return;
             }
-#endif
-            if (autoConflict) {
-                if (info.Conflicts == null) {
-                    Log.Error($"[Reference.Add] Initialise the .Conflicts list of {info.WorkshopId} '{info.Name}' before calling .Add");
-                    return;
-                }
-
-                // add all the mods replaced by this mod to this mods list of conflicts
-                foreach (KeyValuePair<ulong, ItemDetails> entry in Mods) {
-                    if (entry.Value.Replacements != null && entry.Value.Replacements.Contains(info.WorkshopId)) {
-                        info.Conflicts.Add(entry.Value.WorkshopId);
-                    }
-                }
-
-                // now go through each of the listed conflicts and fill in their missing conflicts
-            }
-
             Mods.Add(info.WorkshopId, info);
         }
 

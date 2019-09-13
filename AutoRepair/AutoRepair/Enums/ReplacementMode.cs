@@ -2,7 +2,11 @@ namespace AutoRepair.Enums {
     using System.ComponentModel;
 
     public enum ReplacementMode {
-        // Choices act like radio buttons
+        // There are no replacements for this item
+        [Description("No replacements")]
+        ChooseNone = 0,
+
+            // Choices act like radio buttons
         [Description("Choose only one")]
         ChooseOne,
 
