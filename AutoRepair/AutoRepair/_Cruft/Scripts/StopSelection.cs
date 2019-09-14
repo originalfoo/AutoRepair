@@ -1,4 +1,4 @@
-﻿namespace AutoRepair.Replacements.Scripts
+/*namespace AutoRepair.Replacements.Scripts
 {
     class StopSelection : ReplacementBase
     {
@@ -15,3 +15,4 @@
         }
     }
 }
+*/

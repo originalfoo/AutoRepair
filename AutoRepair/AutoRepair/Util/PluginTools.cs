@@ -17,12 +17,31 @@ namespace AutoRepair.Util {
         public delegate bool PluginListFilter(PluginInfo info);
 
         /// <summary>
+        /// Used to quickly get first item in an enumerable list of <see cref="PluginInfo"/>.
+        /// </summary>
+        /// 
+        /// <param name="list">The list of plugin infos.</param>
+        /// 
+        /// <returns>Either the first item in the list, or <c>null</c>.</returns>
+        public static PluginInfo FirstOrNull(IEnumerable<PluginInfo> list) {
+            try {
+                foreach (PluginInfo plugin in list) {
+                    return plugin;
+                }
+            } catch (Exception e) {
+                Log.Error($"[PluginTools.FirstOrNull] Error: {e.Message}");
+            }
+            return null;
+        }
+
+        /// <summary>
         /// Filters a custom list of plugins to those mathcing a filter.
         /// </summary>
         /// 
         /// <param name="list">The list of plugins to filter.</param>
         /// <param name="filter">Filter function which should return <c>true</c> if the plugin matches.</param>
         /// <param name="first">If <c>true</c>, only the first match will be returned.</param>
+        /// 
         /// <returns>A list of zero or more <see cref="PluginInfo"/> that match the filter.</returns>
         public static List<PluginInfo> FilterPluginList(IEnumerable<PluginInfo> list, PluginListFilter filter, bool first = false) {
             List<PluginInfo> results = new List<PluginInfo> { };
@@ -49,6 +68,7 @@ namespace AutoRepair.Util {
         /// <param name="list">The list of plugins to filter.</param>
         /// <param name="filter">Filter function which should return <c>true</c> if the plugin matches.</param>
         /// <param name="first">If <c>true</c>, only the first match will be returned.</param>
+        /// 
         /// <returns>A list of zero or more <see cref="PluginInfo"/> that match the filter.</returns>
         public static List<PluginInfo> FilterPluginList(PluginListFilter filter, bool first = false) {
             return FilterPluginList(ListOfAllPlugins, filter, first);

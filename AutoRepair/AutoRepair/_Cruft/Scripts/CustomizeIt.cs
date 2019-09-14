@@ -1,4 +1,4 @@
-﻿namespace AutoRepair.Replacements.Scripts
+/*namespace AutoRepair.Replacements.Scripts
 {
     class CustomizeIt : ReplacementBase
     {
@@ -12,3 +12,4 @@
         }
     }
 }
+*/

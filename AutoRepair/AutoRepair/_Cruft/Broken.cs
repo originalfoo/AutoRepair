@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace AutoRepair {
     public static class Broken {
+        /*
         // a list of game breaking or obsolete mods
         public static readonly Dictionary<ulong, string> mods = new Dictionary<ulong, string>
         {
@@ -22,7 +23,6 @@ namespace AutoRepair {
             { 420469721,  "Compass Mod" },
             { 414326578,  "* Configurable Transport Capacity" },
             { 410535198,  "Control Building Level Up" },
-            { 443489442,  "* Custom Milestone Unlocker" },
             { 1398502258, "Dam Upkeep Scaler" },
             { 821539759,  "Disable Zone Check" },
             { 649522495,  "District Service Limit" },
@@ -100,6 +100,7 @@ namespace AutoRepair {
             { 414702884,  "Zoneable Pedestrian Paths" }, // no mod replacement, but there are 'road' assets that can be used
             { 421320224,  "Unlock Districts" },
         };
+        */
 
     }
 

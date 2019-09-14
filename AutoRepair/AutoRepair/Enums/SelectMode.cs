@@ -1,20 +1,20 @@
 namespace AutoRepair.Enums {
     using System.ComponentModel;
 
-    public enum ReplacementMode {
-        // There are no replacements for this item
+    public enum SelectMode {
+        // Choose zero
         [Description("No replacements")]
         ChooseNone = 0,
 
-            // Choices act like radio buttons
+        // Choose zero, or one
         [Description("Choose only one")]
         ChooseOne,
 
-        // Choices act like checkboxes
+        // Choose zero, one, or more
         [Description("Choose any")]
         ChooseAny,
 
-        // Choices act like '(de)select all'
+        // Choose zero, or all
         [Description("Choose all")]
         ChooseAll,
     }

@@ -1,7 +1,8 @@
-﻿using ColossalFramework.Plugins;
+using ColossalFramework.Plugins;
 
 namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class Landscaping : ReplacementBase
     {
         public Landscaping()
@@ -50,4 +51,5 @@ namespace AutoRepair.Replacements.Scripts
             // todo: enable applicable features in ELT
         }
     }
+    */
 }

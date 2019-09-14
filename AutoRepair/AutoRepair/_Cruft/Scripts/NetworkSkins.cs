@@ -1,5 +1,6 @@
-﻿namespace AutoRepair.Replacements.Scripts
+namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class NetworkSkins : ReplacementBase
     {
         public NetworkSkins()
@@ -15,4 +16,5 @@
             obsolete.Add(409073164, 1); // * No Pillars
         }
     }
+    */
 }

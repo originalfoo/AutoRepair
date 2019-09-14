@@ -1,7 +1,9 @@
-﻿namespace AutoRepair.Replacements.Scripts
+namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class LodDetail : ReplacementBase
     {
+       
         public LodDetail()
         {
             mandatory = false;
@@ -14,4 +16,5 @@
             deprecated.Add(635041373, 1); // LOD Reducer
         }
     }
+    */
 }

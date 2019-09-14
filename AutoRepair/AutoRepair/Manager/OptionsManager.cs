@@ -14,8 +14,8 @@ namespace AutoRepair.Manager {
 
         public static C Load() {
             if (instance == null) {
-                Log.Info("[OptionsManager.Load] Loading options.");
                 var configPath = GetConfigPath();
+                Log.Info($"[OptionsManager.Load] Loading: {configPath}");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(C));
 
                 try {
@@ -34,9 +34,9 @@ namespace AutoRepair.Manager {
 
         public static void Save() {
             if (instance == null) return;
-            Log.Info("[OptionsManager.Save] Saving options.");
 
             string configPath = GetConfigPath();
+            Log.Info($"[OptionsManager.Save] Saving: {configPath}");
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(C));
             XmlSerializerNamespaces noNamespaces = new XmlSerializerNamespaces();
@@ -55,10 +55,10 @@ namespace AutoRepair.Manager {
         private static string GetConfigPath() {
             if (typeof(C).GetCustomAttributes(typeof(OptionsPathAttribute), true)
                 .FirstOrDefault() is OptionsPathAttribute configPathAttribute) {
-                Log.Info($"[OptionsManager.GetConfigPath] {configPathAttribute.Value}");
+                //Log.Info($"[OptionsManager.GetConfigPath] {configPathAttribute.Value}");
                 return configPathAttribute.Value;
             } else {
-                Log.Error($"[OptionsManager.GetConfigPath] OptionsPath attribute missing: {typeof(C).Name}");
+                Log.Error($"[OptionsManager.GetConfigPath] OptionsPath attribute missing, defaulting to: {typeof(C).Name}.xml");
                 return typeof(C).Name + ".xml";
             }
         }

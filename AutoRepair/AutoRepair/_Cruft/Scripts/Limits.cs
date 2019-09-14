@@ -1,7 +1,8 @@
-﻿using ColossalFramework.Plugins;
+using ColossalFramework.Plugins;
 
 namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class Limits : ReplacementBase
     {
         public Limits()
@@ -22,4 +23,5 @@ namespace AutoRepair.Replacements.Scripts
             // todo: enable limits display
         }
     }
+    */
 }

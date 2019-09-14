@@ -1,7 +1,8 @@
-﻿using ColossalFramework.Plugins;
+using ColossalFramework.Plugins;
 
 namespace AutoRepair.Replacements.Scripts
 {
+    /*
    // note: this is for 81 tiles, for 25 tiles see Tiles25.cs
     class MovingSun : ReplacementBase
     {
@@ -19,4 +20,5 @@ namespace AutoRepair.Replacements.Scripts
             // don't do anything
         }
     }
+    */
 }

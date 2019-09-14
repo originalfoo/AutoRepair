@@ -1,11 +1,6 @@
-﻿namespace AutoRepair.Replacements.Scripts
+/*
+namespace AutoRepair.Replacements.Scripts
 {
-     /*
-     * Why 'Resize It!' instead of 'More Advanced Toolbar'?
-     * 
-     * From end-user perspective, Resize It is easier to work with and has fewer
-     * incompatibilities with other mods (particularly Find It and Ploppable RICO).
-    */
 
     class ResizeIt : ReplacementBase
     {
@@ -23,3 +18,4 @@
         }
     }
 }
+*/

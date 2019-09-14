@@ -1,8 +1,5 @@
-﻿namespace AutoRepair
+/*namespace AutoRepair
 {
-     /*
-     * A library of methods for obtaining settings from, and applying settings to, other mods
-    */ 
 
     class Settings
     {
@@ -52,3 +49,4 @@
 
     }
 }
+*/

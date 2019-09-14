@@ -1,5 +1,6 @@
-﻿namespace AutoRepair.Replacements.Scripts
+namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class MoveIt : ReplacementBase
     {
         public MoveIt()
@@ -14,4 +15,5 @@
             obsolete.Add(1622545887, 1); // * Move It (Legacy Edition)
         }
     }
+*/
 }

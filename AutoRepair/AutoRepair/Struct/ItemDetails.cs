@@ -31,13 +31,9 @@ namespace AutoRepair.Struct {
         // An item can be in zero or more categories.
         // All items in a category will be considered conflicting, unless explicity stated as compatible.
         // All Verified items in a category will be considered potenital replacements.
-        public List<string> ConflictCategories;
+        public List<string> Categories;
 
         // Denotes mod is compatible with another, despite conflict categorisation
         public List<ulong> CompatibleWith;
-
-        // If more than one replacement, is it a choice or should
-        // they all be used?
-        public ReplacementMode ReplaceMode;
     }
 }

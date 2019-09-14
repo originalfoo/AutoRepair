@@ -8,7 +8,7 @@ namespace AutoRepair.Util {
     using ColossalFramework.UI;
 
     class OptionsTools {
-
+        /*
         public static UIPanel GetOptionsRoot(ulong workshopId) {
             // todo
         }
@@ -36,5 +36,6 @@ namespace AutoRepair.Util {
         public static void SetCurrentState(UIDropDown component, bool state) {
             // todo
         }
+        */
     }
 }

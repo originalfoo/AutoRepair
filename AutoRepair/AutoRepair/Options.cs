@@ -1,17 +1,17 @@
 namespace AutoRepair {
-    using AutoRepair.Manager;
-    using AutoRepair.Util;
-    using AutoRepair.Enums;
-    using AutoRepair.Attributes;
+    using Manager;
+    using Util;
+    using Enums;
+    using Attributes;
 
-    [OptionsPath("AutoRepair.Options.xml")] // Stored in ...\Steam\steamapps\common\Cities_Skylines
+    [OptionsPath("AutoRepair.Options.xml")] // path: ...\Steam\steamapps\common\Cities_Skylines
     public class Options {
         /// <summary>
         /// Causes mod to self-enable when first subscribed.
         ///
-        /// The option is automatically set to <c>false</c> after first use.
+        /// The option is automatically set to <c>false</c> afterwards.
         /// </summary>
-        public bool SelfEnableOnStartup { get; set; } = true;
+        public bool AutoEnableOnFirstUse { get; set; } = true;
 
         /// <summary>
         /// LSM greatly reduces RAM consumption (and thus OOM crashes) and has powerful error handling/recovery features.

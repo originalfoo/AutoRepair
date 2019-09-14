@@ -1,7 +1,8 @@
-﻿using static ColossalFramework.Plugins.PluginManager;
+using static ColossalFramework.Plugins.PluginManager;
 
 namespace AutoRepair.Replacements.Scripts
 {
+    /*
     class HideIt : ReplacementBase
     {
         public HideIt()
@@ -256,4 +257,5 @@ namespace AutoRepair.Replacements.Scripts
             // set config options for the mod
         }
     }
+    */
 }
