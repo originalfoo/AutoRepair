@@ -1,4 +1,4 @@
-namespace AutoRepair {
+namespace AutoRepair.Catalog {
     using System.Collections.Generic;
     using Enums;
     using Struct;
@@ -16,7 +16,7 @@ namespace AutoRepair {
     /// a list and the lowest <see cref="SelectMode"/> of the applicable categories
     /// will then determine what choices can be made.
     /// </summary>
-    public partial class Catalog {
+    public class Categories {
 
         internal const SelectMode
             One = SelectMode.ChooseOne,
@@ -24,7 +24,7 @@ namespace AutoRepair {
             Any = SelectMode.ChooseAny,
             All = SelectMode.ChooseAll;
 
-        public Dictionary<string, SelectMode> CategoryModes = new Dictionary<string, SelectMode> {
+        public static Dictionary<string, SelectMode> Lookup = new Dictionary<string, SelectMode> {
 
             { "25 Tiles", One },
             { "81 Tiles", One },
@@ -53,7 +53,7 @@ namespace AutoRepair {
             { "Unlimited Money", One },
             { "Unlimited Oil & Ore", One },
             { "Unlimited Soil", One },
-            { "Unlock All", One }, // always include the other relevant unlocks below
+            { "Unlock All", One }, // always include any applicable unlocks below
             { "Unlock Landscape", One },
             { "Unlock Roads", One },
             { "Unlock Tracks", One },
@@ -63,6 +63,7 @@ namespace AutoRepair {
             { "Unlock Transport", One },
             { "Unlock Uniques", One },
             { "Unlock Wonders", One },
+            { "Vehicle Options", One },
 
         };
     }

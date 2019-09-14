@@ -9,6 +9,7 @@ namespace AutoRepair.Features {
     using Util;
     using ColossalFramework.UI;
     using static ColossalFramework.Plugins.PluginManager;
+    using System;
 
     public static class AutoEnable {
         internal static bool loadingEvent = false;
@@ -21,10 +22,15 @@ namespace AutoRepair.Features {
         /// </summary>
         public static void Prepare() {
             Log.Info("[AutoEnable.Prepare] Preparing.");
-            if (UIView.GetAView() == null) {
-                LoadingManager.instance.m_introLoaded += Run;
-            } else {
-                Run();
+            try {
+                if (UIView.GetAView() == null) {
+                    LoadingManager.instance.m_introLoaded += Run;
+                } else {
+                    Run();
+                }
+            }
+            catch (Exception e) {
+                Log.Error($"ERROR [AutoEnable.Prepare] {e.Message}");
             }
         }
 
@@ -34,21 +40,24 @@ namespace AutoRepair.Features {
         /// </summary>
         public static void Run() {
             Log.Info("[AutoEnable.Run] Auto-enabling AutoRepair mod.");
+            try {
+                PluginInfo self = PluginTools.FirstOrNull(
+                    PluginTools.FilterPluginList((PluginInfo mod) => {
+                        return PluginListFilters.IsNamed(mod, VersionTools.ModName);
+                    }, true
+                ));
 
-            PluginInfo self = PluginTools.FirstOrNull(
-                PluginTools.FilterPluginList((PluginInfo mod) => {
-                    return PluginListFilters.IsNamed(mod, VersionTools.ModName);
-                }, true
-            ));
+                if (self == null) {
+                    Log.Info("[AutoEnable.Run] Could not find self.");
+                    return;
+                }
 
-            if (self == null) {
-                Log.Info("[AutoEnable.Run] Could not find self.");
-                return;
+                self.isEnabled = true;
+                Log.Info("[AutoEnable.Run] Enabled mod.");
+                AuditTrail.Add("Self-enabled mod on first use.");
+            } catch (Exception e) {
+                Log.Error($"ERROR [AutoEnable.Run] {e.Message}");
             }
-
-            self.isEnabled = true;
-            Log.Info("[AutoEnable.Run] Enabled mod.");
-            AuditTrail.Add("Self-enabled mod on first use.");
         }
     }
 }

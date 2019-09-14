@@ -1,6 +1,8 @@
-using ColossalFramework.UI;
-
 namespace AutoRepair.Features {
+    using ColossalFramework.UI;
+    using System;
+    using Catalog;
+    using Util;
 
     public class OnStartup {
 
@@ -8,17 +10,27 @@ namespace AutoRepair.Features {
         /// Performs various startup tasks depending on <see cref="Options"/>.
         /// </summary>
         public static void Prepare() {
-
-            if (UIView.GetAView() != null) {
-                Run();
-            } else {
-                LoadingManager.instance.m_introLoaded += Run;
+            Log.Info("[OnStartup.Prepare] Preparing.");
+            try {
+                if (UIView.GetAView() != null) {
+                    Run();
+                } else {
+                    LoadingManager.instance.m_introLoaded += Run;
+                }
             }
-
+            catch (Exception e) {
+                Log.Error($"ERROR [OnStartup.Prepare] {e.Message}");
+            }
         }
 
         public static void Run() {
-            Catalog _ = Catalog.Instance;
+            Log.Info("[OnStartup.Run] Running start-up tasks.");
+            try {
+                Catalog cat = Catalog.Instance;
+            }
+            catch (Exception e) {
+                Log.Error($"ERROR [OnStartup.Run] {e.Message}");
+            }
         }
 
         /*

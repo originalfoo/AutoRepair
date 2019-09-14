@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ConfigurableOption.cs" />
-    <Compile Include="Catalog\Catalog.Category.cs" />
+    <Compile Include="Catalog\Categories.cs" />
     <Compile Include="Enums\SelectMode.cs" />
     <Compile Include="Catalog\Catalog.Mods.cs" />
     <Compile Include="Catalog\Catalog.cs" />
