@@ -1,6 +1,5 @@
 namespace AutoRepair.Catalog {
-    using System.Collections.Generic;
-    using Struct;
+    using Structs;
     using Util;
 
     /// <summary>
@@ -19,79 +18,23 @@ namespace AutoRepair.Catalog {
         public static ulong HardMode = 6u;
     }
 
-    public partial class Catalog {
+    public static class Catalog {
 
-        internal static Catalog instance;
-        public static Catalog Instance => instance ?? (instance = new Catalog());
+        public static Categories Category => Categories.Instance;
 
-        public static Dictionary<ulong, ItemDetails> Mods = new Dictionary<ulong, ItemDetails> { };
+        public static Mods Mod => Mods.Instance;
 
-        //public Dictionary<ulong, ItemDetails> Assets { get; set; } = new Dictionary<ulong, ItemDetails> { };
+        public static Musics Music => Musics.Instance;
 
-        private Catalog() {
+        // public static Assets Asset => Assets.Instance;
 
-            Log.Info("[Catalog.ctor] Initialising catalog.");
-
-            PopulateMods();
-            if (!ValidateMods()) {
-                return;
-            }
-
+        public static void Close() {
+            Log.Info("[Catalog.close] Closing catalogs.");
+            Categories.instance = null;
+            Mods.instance = null;
+            Musics.instance = null;
+            //Assets.instance = null;
         }
 
-        internal static void AddMod(ItemDetails info) {
-            //Log.Info($"[Catalog.AddMod] {info.WorkshopId} = {info.Name}");
-            if (info.WorkshopId == 0u) {
-                Log.Info($"ERROR [Catalog.AddMod] Workshop ID is missing: 0u ({info.Name})");
-                return;
-            }
-            if (Mods.ContainsKey(info.WorkshopId)) {
-                Log.Info($"ERROR [Catalog.AddMod] Duplicate key: {info.WorkshopId} ({info.Name})");
-                return;
-            }
-            if (info.Categories == null) {
-                Log.Info($"WARN [Catalog.AddMod] Missing .Categories: {info.WorkshopId} ({info.Name})");
-                return;
-            }
-            if (!ValidateItemCategories(info)) {
-                return;
-            }
-            Mods.Add(info.WorkshopId, info);
-        }
-
-        internal static bool ValidateItemCategories(ItemDetails info) {
-            //Log.Info($"[Catalog.ValidateItemCategories] {info.WorkshopId} = {info.Name}");
-            bool success = true;
-            foreach (string category in info.Categories) {
-                if (!Categories.Lookup.ContainsKey(category)) {
-                    Log.Info($"ERROR [Catalog.ValidateCategories] '{info.WorkshopId}' ({info.Name}) invalid category: {category}");
-                    success = false;
-                }
-            }
-            return success;
-        }
-
-        internal static bool ValidateMods() {
-            Log.Info("[Catalog.ValidateMods] Validating.");
-            bool success = true;
-            foreach (KeyValuePair<ulong,ItemDetails> entry in Mods) {
-                ItemDetails currentMod = entry.Value;
-                //Log.Info($"[Catalog.ValidateMods] {currentMod.WorkshopId} = {currentMod.Name}");
-                // check reciprocal `.CompatibleWith`
-                if (currentMod.CompatibleWith != null) {
-                    foreach (ulong targetMod in currentMod.CompatibleWith) {
-                        if (Mods.TryGetValue(targetMod, out ItemDetails otherMod) && otherMod.CompatibleWith != null) {
-                            List<ulong> reciprocates = new List<ulong>(otherMod.CompatibleWith);
-                            if (!reciprocates.Contains(currentMod.WorkshopId)) {
-                                Log.Info($"ERROR [Catalog.ValidateMods] Mod {currentMod.WorkshopId} ({currentMod.Name}) .CompatibleWith {targetMod} but not reciprocated.");
-                            }
-                        } else {
-                            Log.Info($"ERROR [Catalog.ValidateMods] Mod {currentMod.WorkshopId} ({currentMod.Name}) .CompatibleWith {targetMod} but not found.");
-                        }
-                    }
-                }
-            }
-            return success;
-        }
     }
 }

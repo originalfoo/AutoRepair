@@ -53,8 +53,7 @@ namespace AutoRepair.Features {
                 }
 
                 self.isEnabled = true;
-                Log.Info("[AutoEnable.Run] Enabled mod.");
-                AuditTrail.Add("Self-enabled mod on first use.");
+                AuditTrail.Add("[AutoEnable.Run] AutoRepair mod has self-enabled.");
             } catch (Exception e) {
                 Log.Error($"ERROR [AutoEnable.Run] {e.Message}");
             }

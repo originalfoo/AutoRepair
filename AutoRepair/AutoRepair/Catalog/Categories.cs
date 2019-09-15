@@ -1,20 +1,27 @@
 namespace AutoRepair.Catalog {
     using System.Collections.Generic;
     using Enums;
-    using Struct;
+    using Structs;
+    using Util;
+
+    // TODO: The categories should probably be flags or something like that, which would
+    //       remove the need for the ValidateItem() method and also facilitate much faster
+    //       filtering by category. Will probably make this change once the mod is nearing
+    //       completion and a full list of categories is known.
 
     /// <summary>
-    /// Workshop items are grouped in to one or more 'conflict' <see cref="ItemDetails.Categories"/>.
+    /// Workshop items are grouped in to one or more 'conflict' categories, as listed in their
+    /// <see cref="ItemDetails.Categories"/> field.
     ///
     /// All items in a category are considered incompatible, unless specificaly stated
     /// othrewise by the <see cref="ItemDetails.CompatibleWith"/> list.
     ///
-    /// If the user wants to replace old or broken item with something better, the
+    /// If the user wants to replace old or broken item with something better, only
     /// <see cref="ItemFlags.Verified"/> items in the categories will be suggested.
     ///
     /// When replacing items, all verified items in the listed categories are combined in to
     /// a list and the lowest <see cref="SelectMode"/> of the applicable categories
-    /// will then determine what choices can be made.
+    /// will then determine how many choices can be made.
     /// </summary>
     public class Categories {
 
@@ -24,7 +31,28 @@ namespace AutoRepair.Catalog {
             Any = SelectMode.ChooseAny,
             All = SelectMode.ChooseAll;
 
-        public static Dictionary<string, SelectMode> Lookup = new Dictionary<string, SelectMode> {
+        internal static Categories instance;
+        public static Categories Instance => instance ?? (instance = new Categories());
+
+        Categories() { }
+
+        public bool ValidateItem(ItemDetails info) {
+            //Log.Info($"[Catalog.ValidateItemCategories] {info.WorkshopId} = {info.Name}");
+            bool success = true;
+            if (info.Categories == null) {
+                Log.Info($"WARNING [Categories.Validate] '{info.WorkshopId}' ({info.Name}) has no categories.");
+            } else {
+                foreach (string category in info.Categories) {
+                    if (!Lookup.ContainsKey(category)) {
+                        Log.Info($"ERROR [Categories.Validate] '{info.WorkshopId}' ({info.Name}) invalid category: {category}");
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
+
+        public readonly Dictionary<string, SelectMode> Lookup = new Dictionary<string, SelectMode> {
 
             { "25 Tiles", One },
             { "81 Tiles", One },

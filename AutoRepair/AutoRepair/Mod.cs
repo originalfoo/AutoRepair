@@ -38,8 +38,9 @@ namespace AutoRepair {
 
         [UsedImplicitly]
         public void OnDisabled() {
-            if (EmergencyStop) {
+            if (!EmergencyStop) {
                 Debug.Log($"[{VersionTools.ModName}] Disabled.");
+                Catalog.Catalog.Close();
                 ClearLoadingEvents();
             }
         }

@@ -1,6 +1,6 @@
 namespace AutoRepair.Util {
     using Manager;
-    using Struct;
+    using Structs;
     using System;
     using System.Collections.Generic;
 
@@ -27,6 +27,7 @@ namespace AutoRepair.Util {
         /// </summary>
         /// <param name="entry">Text of the entry being added.</param>
         public static void Add(string entry) {
+            Log.Info(entry, true);
             Instance.Entries.Add(new AuditEntry {
                 Timestamp = TimeTools.Now,
                 Entry = entry

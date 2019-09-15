@@ -26,7 +26,8 @@ namespace AutoRepair.Features {
         public static void Run() {
             Log.Info("[OnStartup.Run] Running start-up tasks.");
             try {
-                Catalog cat = Catalog.Instance;
+                Mods Mod = Catalog.Mod;
+                Musics Music = Catalog.Music;
             }
             catch (Exception e) {
                 Log.Error($"ERROR [OnStartup.Run] {e.Message}");

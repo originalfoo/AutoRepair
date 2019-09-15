@@ -1,4 +1,4 @@
-namespace AutoRepair.Struct {
+namespace AutoRepair.Structs {
     /// <summary>
     /// Used for <see cref="Util.AuditTrail"/>.
     /// </summary>

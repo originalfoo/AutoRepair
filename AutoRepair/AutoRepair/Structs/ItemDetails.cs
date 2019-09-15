@@ -1,6 +1,5 @@
-namespace AutoRepair.Struct {
+namespace AutoRepair.Structs {
     using AutoRepair.Enums;
-    using System.Collections.Generic;
 
     public struct ItemDetails {
         // Workshop ID of the mod (even if no longer in workshop)

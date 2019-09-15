@@ -53,12 +53,13 @@
   <ItemGroup>
     <Compile Include="Attributes\ConfigurableOption.cs" />
     <Compile Include="Catalog\Categories.cs" />
+    <Compile Include="Catalog\Musics.cs" />
     <Compile Include="Enums\SelectMode.cs" />
-    <Compile Include="Catalog\Catalog.Mods.cs" />
+    <Compile Include="Catalog\Mods.cs" />
     <Compile Include="Catalog\Catalog.cs" />
     <Compile Include="Features\AutoEnable.cs" />
     <Compile Include="Util\AuditTrail.cs" />
-    <Compile Include="Struct\AuditEntry.cs" />
+    <Compile Include="Structs\AuditEntry.cs" />
     <Compile Include="Util\OptionsTools.cs" />
     <Compile Include="Util\PluginListFilters.cs" />
     <Compile Include="Util\PluginTools.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Features\OnStartup.cs" />
     <Compile Include="Manager\OptionsManager.cs" />
     <Compile Include="Options.cs" />
-    <Compile Include="Struct\ItemDetails.cs" />
+    <Compile Include="Structs\ItemDetails.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Cruft\Scripts\Landscaping.cs" />
