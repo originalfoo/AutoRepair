@@ -40,12 +40,12 @@ namespace AutoRepair.Catalogs {
             //Log.Info($"[Catalog.ValidateItemCategories] {info.WorkshopId} = {info.Name}");
             bool success = true;
             if (info.Categories == null) {
-                Log.Info($"WARNING [Categories.Validate] '{info.WorkshopId}' ({info.Name}) has no categories.");
+                Log.Info($"WARNING [Categories.Validate] '{info.WorkshopId}' ({info.WorkshopName}) has no categories.");
                 info.Categories = new string[] { };
             } else {
                 foreach (string category in info.Categories) {
                     if (!Lookup.ContainsKey(category)) {
-                        Log.Info($"ERROR [Categories.Validate] '{info.WorkshopId}' ({info.Name}) invalid category: {category}");
+                        Log.Info($"ERROR [Categories.Validate] '{info.WorkshopId}' ({info.WorkshopName}) invalid category: {category}");
                         success = false;
                     }
                 }

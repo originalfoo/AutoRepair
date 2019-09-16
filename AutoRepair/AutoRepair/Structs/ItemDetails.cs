@@ -1,4 +1,5 @@
 using AutoRepair.Enums;
+using ColossalFramework.PlatformServices;
 
 namespace AutoRepair.Structs {
     public struct ItemDetails {
@@ -8,8 +9,41 @@ namespace AutoRepair.Structs {
         // Workshop ID of the mod (even if no longer in workshop)
         public ulong WorkshopId; // default 0
 
-        // Name of the mod (useful if not subscribed or no longer in workshop)
-        public string Name;
+        // Name of the item as it appears in workshop (UGCDetails.title)
+        public string WorkshopName;
+
+        // Name of the item as it apperas in Content Manager (eg. IUserMod.Name for mods)
+        public string IUserModName;
+
+        // Name of the mod (it's main dll) as it appears when querying PluginInfo.name
+        // Not applicable to assets.
+        public string PluginInfoName;
+
+        public ulong creatorID;
+
+        public float score;
+
+        public int upVotes;
+
+        public int downVotes;
+
+        public uint timeCreated;
+
+        public uint timeUpdated;
+
+        //public uint timeAddedToUserList; // not sure if wanted
+
+        public int fileSize;
+
+        public int previewFileSize;
+
+        public string tags;
+        public bool tagsTruncated; // nuke last partial tag
+
+        //public Texture2D image; // these need storing in a cach folder on disk, not in the xml
+
+        public string imageURL;
+
 
         // A summary of the mod
         public ItemFlags Flags; // default: 0

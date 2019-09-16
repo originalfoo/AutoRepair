@@ -72,7 +72,7 @@ namespace AutoRepair.Manager {
             Subscribe(GetPublishedFileId(workshopId), enable, name);
 
         public static bool Subscribe(ItemDetails item, bool enable = true) =>
-            Subscribe(GetPublishedFileId(item.WorkshopId), enable, item.Name);
+            Subscribe(GetPublishedFileId(item.WorkshopId), enable, item.WorkshopName);
 
         public static void OpenWorkshopPageFor(ItemDetails item) {
 
