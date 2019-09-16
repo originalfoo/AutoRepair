@@ -1,7 +1,7 @@
-namespace AutoRepair.Util {
-    using static ColossalFramework.Plugins.PluginManager;
-    using static PluginTools;
+using static ColossalFramework.Plugins.PluginManager;
+using static AutoRepair.Util.PluginTools;
 
+namespace AutoRepair.Util {
     public static class PluginListFilters {
         public static bool IsCameraScript(PluginInfo plugin) => plugin.isCameraScript;
 

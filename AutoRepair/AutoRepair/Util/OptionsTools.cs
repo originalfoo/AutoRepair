@@ -1,3 +1,5 @@
+using ColossalFramework.UI;
+
 /// <summary>
 /// These tools are used to change options of other mods
 /// by interactive with the UI components of their options
@@ -5,8 +7,6 @@
 /// in the game, but it will work for most users and mods.
 /// </summary>
 namespace AutoRepair.Util {
-    using ColossalFramework.UI;
-
     class OptionsTools {
         /*
         public static UIPanel GetOptionsRoot(ulong workshopId) {

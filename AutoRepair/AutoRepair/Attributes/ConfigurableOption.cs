@@ -1,6 +1,6 @@
-namespace AutoRepair.Attributes {
-    using System;
+using System;
 
+namespace AutoRepair.Attributes {
     [AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
     sealed class ConfigurableOptionAttribute : Attribute {
         public ConfigurableOptionAttribute(string group, string description) {

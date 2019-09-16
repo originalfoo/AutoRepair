@@ -1,9 +1,9 @@
-namespace AutoRepair.Catalog {
-    using System.Collections.Generic;
-    using Enums;
-    using Structs;
-    using Util;
+using System.Collections.Generic;
+using AutoRepair.Enums;
+using AutoRepair.Structs;
+using AutoRepair.Util;
 
+namespace AutoRepair.Catalogs {
     // TODO: The categories should probably be flags or something like that, which would
     //       remove the need for the ValidateItem() method and also facilitate much faster
     //       filtering by category. Will probably make this change once the mod is nearing
@@ -41,6 +41,7 @@ namespace AutoRepair.Catalog {
             bool success = true;
             if (info.Categories == null) {
                 Log.Info($"WARNING [Categories.Validate] '{info.WorkshopId}' ({info.Name}) has no categories.");
+                info.Categories = new string[] { };
             } else {
                 foreach (string category in info.Categories) {
                     if (!Lookup.ContainsKey(category)) {

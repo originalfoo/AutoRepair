@@ -1,7 +1,8 @@
-namespace AutoRepair.Catalog {
-    using Structs;
-    using Util;
+using AutoRepair.Structs;
+using AutoRepair.Util;
+using AutoRepair.Attributes;
 
+namespace AutoRepair.Catalogs {
     /// <summary>
     /// Fake workshop id used to denote vanilla game feature.
     /// Can be used in <see cref="ItemDetails.Replacements"/> and <see cref="ItemDetails.CompatibleWith"/>.
@@ -16,6 +17,7 @@ namespace AutoRepair.Catalog {
         public static ulong UnlimitedSoil = 4u;
         public static ulong UnlimitedOilOre = 5u;
         public static ulong HardMode = 6u;
+        public static bool IsVanilla(ulong workshopId) => workshopId < 7u && workshopId != 0u;
     }
 
     public static class Catalog {
@@ -28,8 +30,8 @@ namespace AutoRepair.Catalog {
 
         // public static Assets Asset => Assets.Instance;
 
-        public static void Close() {
-            Log.Info("[Catalog.close] Closing catalogs.");
+        public static void Stop() {
+            Log.Info("[Catalog.Stop] Clearing catalog instances.");
             Categories.instance = null;
             Mods.instance = null;
             Musics.instance = null;

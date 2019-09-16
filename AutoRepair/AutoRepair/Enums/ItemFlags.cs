@@ -1,7 +1,7 @@
-namespace AutoRepair.Enums {
-    using System;
-    using System.ComponentModel;
+using System;
+using System.ComponentModel;
 
+namespace AutoRepair.Enums {
     [Flags]
     public enum ItemFlags {
 
@@ -75,5 +75,9 @@ namespace AutoRepair.Enums {
         // Does it break the asset/theme/map editor?
         [Description("Breaks the asset/theme/map editors")]
         BreaksEditors,
+
+        // Just a translation of existing mod, likely unmaintained
+        [Description("Translation of an existing mod")]
+        Translation,
     }
 }

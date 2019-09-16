@@ -4,7 +4,6 @@ using ICities;
 using System;
 using System.Collections.Generic;
 using static ColossalFramework.Plugins.PluginManager;
-using AutoRepair.Structs;
 
 namespace AutoRepair.Util {
     public static class PluginTools {

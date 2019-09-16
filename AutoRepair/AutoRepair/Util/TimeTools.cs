@@ -1,8 +1,9 @@
+using System;
+
 /// <summary>
 /// Library of time-related tools.
 /// </summary>
 namespace AutoRepair.Util {
-    using System;
     public static class TimeTools {
 
         /// <summary>

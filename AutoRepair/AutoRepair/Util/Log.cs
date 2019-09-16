@@ -1,8 +1,8 @@
-namespace AutoRepair.Util {
-    using System.Diagnostics;
-    using System.IO;
-    using UnityEngine;
+using System.Diagnostics;
+using System.IO;
+using UnityEngine;
 
+namespace AutoRepair.Util {
     public class Log {
         public static readonly string LogFileName = "AutoRepair.log";
 

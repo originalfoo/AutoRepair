@@ -1,8 +1,8 @@
-namespace AutoRepair.Enums {
-    using System;
-    using System.ComponentModel;
-    using System.Reflection;
+using System;
+using System.ComponentModel;
+using System.Reflection;
 
+namespace AutoRepair.Enums {
     public static class EnumDescriptionExtension {
         /// <summary>
         /// Retrieves text of Description attribute

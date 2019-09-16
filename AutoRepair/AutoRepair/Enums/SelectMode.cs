@@ -1,6 +1,6 @@
-namespace AutoRepair.Enums {
-    using System.ComponentModel;
+using System.ComponentModel;
 
+namespace AutoRepair.Enums {
     public enum SelectMode {
         // Choose zero
         [Description("No replacements")]

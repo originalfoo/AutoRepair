@@ -1,10 +1,10 @@
-namespace AutoRepair.Catalog {
-    using Structs;
-    using Enums;
-    using Util;
-    using System.Collections.Generic;
-    using System;
+using AutoRepair.Structs;
+using AutoRepair.Enums;
+using AutoRepair.Util;
+using System.Collections.Generic;
+using System;
 
+namespace AutoRepair.Catalogs {
     public class Musics {
 
         internal static Musics instance;
@@ -16,6 +16,7 @@ namespace AutoRepair.Catalog {
             Log.Info("[Musics.ctor] Instantiating.");
             try {
                 Populate();
+                Log.Info($"[Musics.Lookup] {Lookup.Count} items defined");
             }
             catch (Exception e) {
                 Log.Error($"ERROR [Musics.ctor] {e.Message}");
@@ -25,6 +26,7 @@ namespace AutoRepair.Catalog {
         internal static readonly ItemFlags flags = ItemFlags.Verified;
         internal static readonly string[] gameVer = { "1.11", "1.12" };
         internal static readonly ulong[] reqItems = { 422934383u }; // CSL Music mod required item
+        internal static readonly string[] noCats = { };
 
         internal void Add(ItemDetails info) {
             //Log.Info($"[Catalog.AddMod] {info.WorkshopId} = {info.Name}");
@@ -36,16 +38,17 @@ namespace AutoRepair.Catalog {
                 Log.Info($"ERROR [Musics.Add] Duplicate key: {info.WorkshopId} ({info.Name})");
                 return;
             }
-            if (info.Categories != null) {
-                Log.Info($"ERROR [Musics.Add] Do not define categories for music: {info.WorkshopId} ({info.Name})");
-                return;
-            }
             if (Mods.Instance.Lookup.ContainsKey(info.WorkshopId)) {
                 Log.Info($"ERROR [Musics.Add] Music is must not be in Mods lookup: {info.WorkshopId} ({info.Name})");
                 return;
             }
+            if (info.Categories != null) {
+                Log.Info($"WARNING [Musics.Add] Do not define categories for music: {info.WorkshopId} ({info.Name})");
+            }
 
+            info.ItemType = ItemTypes.Music;
             info.Flags = info.Flags == 0 ? flags : info.Flags;
+            info.Categories = noCats;
             info.GameVersion = gameVer;
             info.RequiredItems = reqItems;
 

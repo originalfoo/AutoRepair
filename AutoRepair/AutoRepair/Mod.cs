@@ -1,10 +1,11 @@
-namespace AutoRepair {
-    using ICities;
-    using UnityEngine;
-    using Features;
-    using Util;
-    using JetBrains.Annotations;
+using ICities;
+using UnityEngine;
+using AutoRepair.Features;
+using AutoRepair.Storage;
+using AutoRepair.Util;
+using JetBrains.Annotations;
 
+namespace AutoRepair {
     public class Mod : IUserMod {
         /// <summary>
         /// If <c>true</c>, all features disabled.
@@ -16,23 +17,23 @@ namespace AutoRepair {
 
         [UsedImplicitly]
         public string Description => EmergencyStop
-            ? "Temporarily deactivated while we fix some bugs."
+            ? "Temporarily suspended while we fix some bugs."
             : "Helps you repair Cities: Skylines.";
 
         [UsedImplicitly]
         static Mod() {
-            if (!EmergencyStop && Options.Instance.AutoEnableOnFirstUse) {
-                Options.Instance.AutoEnableOnFirstUse = false;
-                Options.Instance.Save();
-                AutoEnable.Prepare();
+            if (!EmergencyStop && !Audit.Instance.AutoEnabled) {
+                Audit.Instance.AutoEnabled = true;
+                Audit.Instance.Save();
+                AutoEnable.Start();
             }
         }
 
         [UsedImplicitly]
         public void OnEnabled() {
             if (!EmergencyStop) {
-                Log.Info($"[{VersionTools.ModName}] Enabled.", true);
-                OnStartup.Prepare();
+                Log.Info($"[{VersionTools.ModName}] Enabled. Game version: {VersionTools.CurrentGameVersion}", true);
+                FeatureManager.Start();
             }
         }
 
@@ -40,15 +41,8 @@ namespace AutoRepair {
         public void OnDisabled() {
             if (!EmergencyStop) {
                 Debug.Log($"[{VersionTools.ModName}] Disabled.");
-                Catalog.Catalog.Close();
-                ClearLoadingEvents();
+                FeatureManager.Stop();
             }
         }
-
-        public void ClearLoadingEvents() {
-            LoadingManager.instance.m_introLoaded -= AutoEnable.Run;
-            LoadingManager.instance.m_introLoaded -= OnStartup.Run;
-        }
-
     }
 }

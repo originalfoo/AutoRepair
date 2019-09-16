@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -52,13 +54,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ConfigurableOption.cs" />
-    <Compile Include="Catalog\Categories.cs" />
-    <Compile Include="Catalog\Musics.cs" />
+    <Compile Include="Manager\SubscriptionsManager.cs" />
+    <Compile Include="Storage\Archive.cs" />
+    <Compile Include="Catalogs\Categories.cs" />
+    <Compile Include="Catalogs\Musics.cs" />
+    <Compile Include="Enums\ItemTypes.cs" />
     <Compile Include="Enums\SelectMode.cs" />
-    <Compile Include="Catalog\Mods.cs" />
-    <Compile Include="Catalog\Catalog.cs" />
+    <Compile Include="Catalogs\Mods.cs" />
+    <Compile Include="Catalogs\Catalog.cs" />
+    <Compile Include="Features\NewGameVersion.cs" />
+    <Compile Include="Features\RemoveGameBreakers.cs" />
+    <Compile Include="Features\OutputModsList.cs" />
     <Compile Include="Features\AutoEnable.cs" />
-    <Compile Include="Util\AuditTrail.cs" />
+    <Compile Include="Structs\ArchiveEntry.cs" />
+    <Compile Include="Structs\GameVersion.cs" />
+    <Compile Include="Storage\Audit.cs" />
     <Compile Include="Structs\AuditEntry.cs" />
     <Compile Include="Util\OptionsTools.cs" />
     <Compile Include="Util\PluginListFilters.cs" />
@@ -69,9 +79,9 @@
     <Compile Include="Enums\GameUpdateMode.cs" />
     <Compile Include="Enums\EnumDescriptionExtension.cs" />
     <Compile Include="Enums\ItemFlags.cs" />
-    <Compile Include="Features\OnStartup.cs" />
-    <Compile Include="Manager\OptionsManager.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="Manager\FeatureManager.cs" />
+    <Compile Include="Manager\StorageManager.cs" />
+    <Compile Include="Storage\Options.cs" />
     <Compile Include="Structs\ItemDetails.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

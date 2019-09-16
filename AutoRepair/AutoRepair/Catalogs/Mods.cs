@@ -1,10 +1,10 @@
-namespace AutoRepair.Catalog {
-    using Structs;
-    using Enums;
-    using Util;
-    using System.Collections.Generic;
-    using System;
+using AutoRepair.Structs;
+using AutoRepair.Enums;
+using AutoRepair.Util;
+using System.Collections.Generic;
+using System;
 
+namespace AutoRepair.Catalogs {
     public class Mods {
 
         internal static Mods instance;
@@ -17,6 +17,7 @@ namespace AutoRepair.Catalog {
             try {
                 Populate();
                 Validate();
+                Log.Info($"[Mods.Lookup] {Lookup.Count} items defined");
             }
             catch (Exception e) {
                 Log.Error($"ERROR [Mods.ctor] {e.Message}");
@@ -36,6 +37,7 @@ namespace AutoRepair.Catalog {
             if (!Categories.Instance.ValidateItem(info)) {
                 return;
             }
+            info.ItemType = ItemTypes.Mod;
             Lookup.Add(info.WorkshopId, info);
         }
 
@@ -721,9 +723,7 @@ namespace AutoRepair.Catalog {
             //todo
             #region Unlock All / Milestones
 
-            //458519223 - Unlock All + Wonders & Landmarks
-
-            //1840481380 - Unlock All + Wonders & Landmarks 汉化版
+            // - 
 
             //627047745 - Winter Buildings Unlocker (+vice versa)
 
@@ -742,8 +742,27 @@ namespace AutoRepair.Catalog {
                 Flags = ItemFlags.Verified,
                 GameVersion = new string[] { "1.11", "1.12" },
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques" },
-                CompatibleWith = new ulong[] { 534440333, 406522876, 527499893, 406280169, 532070982 }
-                // custom milestones, no money, unlock track+metro, smooth prog, swap metro/train
+                CompatibleWith = new ulong[] { 534440333, 406522876, 527499893 }
+                // custom milestones, no money, unlock track+metro
+            });
+
+            Add(new ItemDetails {
+                WorkshopId = 458519223, // BloodyPenguin
+                Name = "Unlock All + Wonders & Landmarks",
+                Flags = ItemFlags.Verified,
+                GameVersion = new string[] { "1.11", "1.12" },
+                Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Wonders", "Unlock Uniques" },
+                CompatibleWith = new ulong[] { 406522876, 527499893 },
+                // no money, unlock track+metro
+            });
+
+            Add(new ItemDetails {
+                WorkshopId = 1840481380, // 竹叶子兄
+                Name = "Unlock All + Wonders & Landmarks 汉化版",
+                Flags = ItemFlags.Verified | ItemFlags.Translation,
+                GameVersion = new string[] { "1.11", "1.12" },
+                Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Wonders", "Unlock Uniques" },
+                CompatibleWith = new ulong[] { 406522876, 527499893 },
             });
 
             Add(new ItemDetails {
@@ -781,8 +800,8 @@ namespace AutoRepair.Catalog {
                 Flags = ItemFlags.Verified,
                 GameVersion = new string[] { "1.11", "1.12" },
                 Categories = new string[] { "Milestone Tweaks", "Unlock Tracks" },
-                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 406522876, 1614062928, 447789816, 406280169, 532070982 },
-                // no money, unlock landscaping, unlock all roads, smooth prog, swap metro/train
+                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 406522876, 1614062928, 447789816, 406280169, 532070982, 458519223, 1840481380 },
+                // no money, unlock landscaping, unlock all roads, smooth prog, swap metro/train, unlock+wonders x 2
             });
 
             Add(new ItemDetails {
@@ -791,7 +810,7 @@ namespace AutoRepair.Catalog {
                 Flags = ItemFlags.Verified,
                 GameVersion = new string[] { "1.11", "1.12" },
                 Categories = new string[] { "Milestone Tweaks" },
-                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 527499893, 406522876, 1614062928, 447789816, 406280169 },
+                CompatibleWith = new ulong[] { 527499893, 406522876, 1614062928, 447789816, 406280169 },
                 // unlock track+metro, no money, unlock landscaping, unlock all roads, smooth prog
             });
 
@@ -801,8 +820,8 @@ namespace AutoRepair.Catalog {
                 Flags = ItemFlags.Verified,
                 GameVersion = new string[] { "1.11", "1.12" },
                 Categories = new string[] { "Milestone Tweaks" },
-                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 527499893, 1614062928, 447789816, 1424264814, 406280169, 532070982 },
-                // unlock track+metro, unlock landscaping, unlock all roads, yafu, smooth prog, swap metro/train
+                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 527499893, 1614062928, 447789816, 1424264814, 406280169, 532070982, 458519223, 1840481380 },
+                // unlock track+metro, unlock landscaping, unlock all roads, yafu, smooth prog, swap metro/train, unlock+wonders x 2
             });
 
             Add(new ItemDetails {
@@ -820,7 +839,7 @@ namespace AutoRepair.Catalog {
                 Name = "Smooth Progression",
                 Flags = ItemFlags.Unmaintained,
                 Categories = new string[] { "Milestone Tweaks" },
-                CompatibleWith = new ulong[] { Vanilla.UnlockAll, 406522876, 1614062928, 447789816, 527499893, 1424264814, 532070982 },
+                CompatibleWith = new ulong[] { 406522876, 1614062928, 447789816, 527499893, 1424264814, 532070982 },
                 // no money, unlock landscape, unlock all roads, unlock track+metro, yafu, swap metro/train
             });
 
@@ -834,44 +853,44 @@ namespace AutoRepair.Catalog {
             });
 
             Add(new ItemDetails {
-                WorkshopId = 438378843u,
+                WorkshopId = 438378843,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 
             Add(new ItemDetails {
-                WorkshopId = 431993428u,
+                WorkshopId = 431993428,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 
             Add(new ItemDetails {
-                WorkshopId = 428555989u,
+                WorkshopId = 428555989,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 
             Add(new ItemDetails {
-                WorkshopId = 428555664u,
+                WorkshopId = 428555664,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 
             Add(new ItemDetails {
-                WorkshopId = 419329713u,
+                WorkshopId = 419329713,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 
             Add(new ItemDetails {
-                WorkshopId = 418975267u,
+                WorkshopId = 418975267,
                 Name = "Unlock All",
-                Flags = ItemFlags.Unmaintained,
+                Flags = ItemFlags.Unmaintained | ItemFlags.ForceMigration,
                 Categories = new string[] { "Unlock All", "Unlock Landscape", "Unlock Roads", "Unlock Tracks", "Unlock Buildings", "Unlock Districts", "Unlock Monuments", "Unlock Transport", "Unlock Uniques", "Unlock Wonders" },
             });
 

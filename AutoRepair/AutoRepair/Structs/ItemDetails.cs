@@ -1,7 +1,10 @@
-namespace AutoRepair.Structs {
-    using AutoRepair.Enums;
+using AutoRepair.Enums;
 
+namespace AutoRepair.Structs {
     public struct ItemDetails {
+        // Type of item
+        public ItemTypes ItemType;
+
         // Workshop ID of the mod (even if no longer in workshop)
         public ulong WorkshopId; // default 0
 

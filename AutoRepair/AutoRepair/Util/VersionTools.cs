@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using AutoRepair.Storage;
+using AutoRepair.Structs;
 using System.Reflection;
-using System.Text;
 
-namespace AutoRepair.Util {
+namespace AutoRepair.Storage {
     public class VersionTools {
 
         internal static string ModNameStub => $"{Assembly.GetExecutingAssembly().GetName().Name}";
@@ -13,18 +11,17 @@ namespace AutoRepair.Util {
 
         public static string ModName => $"{ModNameStub} {ModVersion}";
 
+        /// <summary>
+        /// The current (actual) game version.
+        /// </summary>
+        public static GameVersion CurrentGameVersion => new GameVersion {
+            Major = BuildConfig.APPLICATION_VERSION_A,
+            Minor = BuildConfig.APPLICATION_VERSION_B
+        };
 
         /// <summary>
-        /// The game version the mod is expecting to see.
+        ///  Will be <c>true</c> if the actual game version is different to stored previous game version.
         /// </summary>
-        public static readonly uint GameVersionA = 1u;
-        public static readonly uint GameVersionB = 12u;
-
-        //        public static bool UnexpectedGameVersion()
-        //        {
-        //            Debug.Log($"[{name}] Detected game version: {BuildConfig.applicationVersionFull}");
-        //            return (GameVersionB != BuildConfig.APPLICATION_VERSION_B || GameVersionA != BuildConfig.APPLICATION_VERSION_A);
-        //        }
-
+        public static bool IsNewGameVersion => !CurrentGameVersion.Equals(Archive.Instance.PreviousGameVersion);
     }
 }
