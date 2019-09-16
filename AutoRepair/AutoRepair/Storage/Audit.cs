@@ -1,3 +1,4 @@
+using AutoRepair.Attributes;
 using AutoRepair.Manager;
 using AutoRepair.Structs;
 using AutoRepair.Util;

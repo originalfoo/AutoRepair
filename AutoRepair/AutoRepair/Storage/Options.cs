@@ -1,8 +1,7 @@
+using AutoRepair.Attributes;
+using AutoRepair.Enums;
 using AutoRepair.Manager;
 using AutoRepair.Util;
-using AutoRepair.Enums;
-using AutoRepair.Structs;
-using AutoRepair.Attributes;
 
 namespace AutoRepair.Storage {
     [StoragePath("AutoRepair.Options.xml")] // path: ...\Steam\steamapps\common\Cities_Skylines

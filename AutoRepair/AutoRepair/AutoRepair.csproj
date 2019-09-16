@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ConfigurableOption.cs" />
+    <Compile Include="Attributes\StoragePath.cs" />
     <Compile Include="Manager\SubscriptionsManager.cs" />
     <Compile Include="Storage\Archive.cs" />
     <Compile Include="Catalogs\Categories.cs" />

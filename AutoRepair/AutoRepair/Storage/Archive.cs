@@ -1,3 +1,4 @@
+using AutoRepair.Attributes;
 using AutoRepair.Manager;
 using AutoRepair.Structs;
 using System.Collections.Generic;
@@ -31,5 +32,11 @@ namespace AutoRepair.Storage {
         /// List of all subscribed mods at point when a game version change was detected.
         /// </summary>
         public List<ArchiveEntry> DisabledOnGameUpdate { get; set; } = new List<ArchiveEntry> { };
+
+        /// <summary>
+        /// List of items currently being subscribed. When event shows they are ready, or on next
+        /// game start (if user quits while they are downloading) they can be enabled if applicable.
+        /// </summary>
+        public List<ArchiveEntry> BeingSubscribed { get; set; } = new List<ArchiveEntry> { };
     }
 }

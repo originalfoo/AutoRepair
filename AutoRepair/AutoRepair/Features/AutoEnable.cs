@@ -25,7 +25,7 @@ namespace AutoRepair.Features {
         /// 1. Prevent further calls by setting SelfEnableOnStartup = false
         /// 2. Determine when <c>SelfEnable()</c> is safe to call.
         /// </summary>
-        public static bool Start() {
+        public static void Start() {
             Log.Info("[AutoEnable.Prepare] Preparing.");
             try {
                 if (UIView.GetAView() == null) {
@@ -37,7 +37,6 @@ namespace AutoRepair.Features {
             catch (Exception e) {
                 Log.Error($"ERROR [AutoEnable.Prepare] {e.Message}");
             }
-            return false;
         }
 
         /// <summary>
@@ -45,7 +44,7 @@ namespace AutoRepair.Features {
         /// 2. Enable it
         /// </summary>
         private static void Run() {
-            Log.Info($"[AutoEnable.Run] Auto-enabling AutoRepair mod by name '{VersionTools.ModName}'.");
+            Log.Info($"[AutoEnable.Run] Ensuring mod is enabled.");
             try {
                 PluginInfo self = Singleton<PluginManager>.instance.GetPluginsInfo()
                     .Where(plugin => SubscriptionsManager.GetModName(plugin) == VersionTools.ModName)
@@ -56,8 +55,10 @@ namespace AutoRepair.Features {
                     return;
                 }
 
-                self.isEnabled = true;
-                Audit.Add("[AutoEnable.Run] AutoRepair mod has self-enabled.");
+                if (!self.isEnabled) {
+                    self.isEnabled = true;
+                    Audit.Add("[AutoEnable.Run] AutoRepair mod has self-enabled.");
+                }
             } catch (Exception e) {
                 Log.Error($"ERROR [AutoEnable.Run] {e.Message}");
             }

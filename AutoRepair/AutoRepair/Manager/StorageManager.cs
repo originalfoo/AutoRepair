@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using AutoRepair.Attributes;
 using AutoRepair.Util;
 
 /// <summary>
@@ -13,13 +14,13 @@ namespace AutoRepair.Manager {
 
         public static C Load() {
             if (instance == null) {
-                var configPath = GetConfigPath();
-                Log.Info($"[StorageManager.Load] {configPath}");
+                var storagePath = GetStoragePath();
+                Log.Info($"[StorageManager.Load] {storagePath}");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(C));
 
                 try {
-                    if (File.Exists(configPath)) {
-                        using (StreamReader streamReader = new StreamReader(configPath)) {
+                    if (File.Exists(storagePath)) {
+                        using (StreamReader streamReader = new StreamReader(storagePath)) {
                             instance = xmlSerializer.Deserialize(streamReader) as C;
                         }
                     }
@@ -34,15 +35,15 @@ namespace AutoRepair.Manager {
         public static void Save() {
             if (instance == null) return;
 
-            string configPath = GetConfigPath();
-            Log.Info($"[StorageManager.Save] {configPath}");
+            string storagePath = GetStoragePath();
+            Log.Info($"[StorageManager.Save] {storagePath}");
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(C));
             XmlSerializerNamespaces noNamespaces = new XmlSerializerNamespaces();
             noNamespaces.Add("", "");
 
             try {
-                using (StreamWriter streamWriter = new StreamWriter(configPath)) {
+                using (StreamWriter streamWriter = new StreamWriter(storagePath)) {
                     xmlSerializer.Serialize(streamWriter, instance, noNamespaces);
                 }
             }
@@ -51,24 +52,15 @@ namespace AutoRepair.Manager {
             }
         }
 
-        private static string GetConfigPath() {
+        private static string GetStoragePath() {
             if (typeof(C).GetCustomAttributes(typeof(StoragePathAttribute), true)
-                .FirstOrDefault() is StoragePathAttribute configPathAttribute) {
+                .FirstOrDefault() is StoragePathAttribute storagePathAttribute) {
                 //Log.Info($"[OptionsManager.GetConfigPath] {configPathAttribute.Value}");
-                return configPathAttribute.Value;
+                return storagePathAttribute.Value;
             } else {
                 Log.Error($"[StorageManager.GetConfigPath] StoragePath attribute missing, defaulting to: {typeof(C).Name}.xml");
                 return typeof(C).Name + ".xml";
             }
         }
-    }
-
-    [AttributeUsage(AttributeTargets.Class)]
-    public class StoragePathAttribute : Attribute {
-        public StoragePathAttribute(string value) {
-            Value = value;
-        }
-
-        public string Value { get; private set; }
     }
 }

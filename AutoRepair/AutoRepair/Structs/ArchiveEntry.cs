@@ -4,6 +4,6 @@ namespace AutoRepair.Structs {
     public struct ArchiveEntry {
         public ulong WorkshopId;
         public string Name;
-        public bool WasEnabled;
+        public bool Enabled;
     }
 }
