@@ -28,6 +28,8 @@ namespace AutoRepair.Storage {
         [ConfigurableOption("On Startup", "Add a list of mods to the main game log file")]
         public bool OutputModListToGameLog { get; set; } = true;
 
+        public string Language { get; set; } = "default";
+
         /// <summary>
         /// Determines what happens to mods listed in <see cref="GameUpdateMods"/>
         /// </summary>

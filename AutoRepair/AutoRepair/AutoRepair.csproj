@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Attributes\ConfigurableOption.cs" />
     <Compile Include="Attributes\StoragePath.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Util\Translate.cs" />
     <Compile Include="Manager\SubscriptionsManager.cs" />
     <Compile Include="Storage\Archive.cs" />
     <Compile Include="Catalogs\Categories.cs" />
@@ -102,7 +104,9 @@
     <Compile Include="_Cruft\Settings.cs" />
     <Compile Include="Util\Log.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"
