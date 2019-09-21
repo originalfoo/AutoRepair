@@ -17,21 +17,19 @@ namespace AutoRepair.Storage {
         ///
         /// If <c>true</c>, <see cref="ItemFlags.GameBreaking"/> mods will be automatically unsubscribed without user intervention.
         /// </summary>
-        [ConfigurableOption("On Startup", "Automatically remove game breaking mods")]
+        [ConfigurableOption("Group.OnStartup", "Checkbox.AutoRemoveBreaking")]
         public bool AutoRemoveGameBreakers { get; set; } = true;
 
         /// <summary>
         /// Output mods list to game log file? (output_log.txt / Player.log)
-        /// 
-        /// The list will always output to the Mod Freshener <see cref="Log"/>.
         /// </summary>
-        [ConfigurableOption("On Startup", "Add a list of mods to the main game log file")]
+        [ConfigurableOption("Group.OnStartup", "Checkbox.LogModsList")]
         public bool OutputModListToGameLog { get; set; } = true;
 
         public string Language { get; set; } = "default";
 
         /// <summary>
-        /// Determines what happens to mods listed in <see cref="GameUpdateMods"/>
+        /// 
         /// </summary>
         public GameUpdateMode GameUpdateStrategy { get; set; } = GameUpdateMode.DisableBroken;
     }

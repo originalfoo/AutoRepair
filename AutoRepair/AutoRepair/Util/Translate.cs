@@ -53,7 +53,7 @@ namespace AutoRepair.Util {
         public string Get(string key) => Get(CurrentLanguage, key);
 
         [SuppressMessage("Style", "IDE0018:Inline variable declaration", Justification = "Would require two variables to be defined which seems counter-productive.")]
-        public string Get(string lang, string key) {
+        private string Get(string lang, string key) {
             string translation;
 
             // Try find translation in the current language first
@@ -70,6 +70,10 @@ namespace AutoRepair.Util {
 
         public bool HasString(string key) => Translations[CurrentLanguage].ContainsKey(key);
 
+        /// <summary>
+        /// Loads and parses the CSV file.
+        /// </summary>
+        /// <param name="resourceName"></param>
         private void Load(string resourceName) {
             Log.Info($"[Translate.Load] {resourceName}.csv");
 
@@ -92,7 +96,8 @@ namespace AutoRepair.Util {
             string firstLine = lines[0];
             List<string> langCodes = new List<string>();
             using (var sr = new StringReader(firstLine)) {
-                ReadCsvCell(sr); // skip first empty cell
+                ReadCsvCell(sr); // skip key cell
+                ReadCsvCell(sr); // skip source string cell
                 while (true) {
                     string langCode = ReadCsvCell(sr);
                     if (langCode.Length == 0) {
@@ -115,7 +120,8 @@ namespace AutoRepair.Util {
             // first col = translation key, remaining cols = translations in languages as per langCodes list
             foreach (string line in lines.Skip(1)) {
                 using (var sr = new StringReader(line)) {
-                    string key = ReadCsvCell(sr);
+                    string key = ReadCsvCell(sr); // translation key
+                    ReadCsvCell(sr); // skip source string cell
                     if (key.Length == 0) {
                         break; // last line is empty
                     }
